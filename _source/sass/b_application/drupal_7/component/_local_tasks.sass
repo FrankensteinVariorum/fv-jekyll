@@ -1,0 +1,66 @@
+/* @file admin_ui/_tabs
+ * @description A standardized style for Drupal’s local task tabs.
+ * Work in progress: still needs to handle secondary tabs
+ * @todo: this is a D8 implementation. redo for D7.
+ */
+
+
+ul.primary
+  background-color: transparent
+  width: auto
+  list-style-type: none
+  display: flex
+  flex-direction: row
+  justify-content: center
+  flex-wrap: wrap
+  border: 0
+  padding: 0
+  margin: rv(2) rv(0) rv(0) rv(0)
+    
+  li    
+    background-color: transparent
+    border-bottom: 5px solid $white
+    border-right: 5px solid $white
+    display: inline-block
+    padding: 0
+    text-align: center
+    +set-left-padding(-3)
+    +set-right-padding(-3)
+    
+    a
+      color: $link_colour
+      font-weight: $normalfw
+      text-decoration: none
+      +set-margin(-3)
+      display: inline-block
+      box-sizing: border-box
+      width: 100%
+      text-align: center
+      position: relative
+      border: 0
+      padding: 0
+      background-color: transparent
+  
+      
+      &:after
+        content: ''
+        position: absolute
+        bottom: -10px
+        height: 2px
+        width: 100%
+        background-color: $light_neutral // border colour
+        display: block
+      
+    &:focus, &:hover, &.is-active, &.active
+      a
+        border: 0
+        background-color: transparent
+        color: darken($link_colour,15%)
+        
+        &:after
+          display: block
+          background-color: darken($link_colour,15%) // border colour
+        
+    &.is-active, &.active
+      a
+        font-weight: $semiboldfw

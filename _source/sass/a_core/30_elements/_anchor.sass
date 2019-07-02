@@ -1,0 +1,15 @@
+a
+  color: $link_colour
+  cursor: pointer
+  text-decoration: none
+  
+  &:hover, &:active
+    text-decoration: underline
+    @extend %standard-transition
+    
+p > a, p li > a, blockquote > a
+  color: $link_colour
+  text-decoration: underline
+  
+  &:hover, &:active
+    color: darken($link_colour, 10%)

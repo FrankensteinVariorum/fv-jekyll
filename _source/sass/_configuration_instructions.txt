@@ -1,0 +1,122 @@
+GENERAL CONFIGURATION INSTRUCTIONS
+Last updated 2018-11-23
+   
+    This configuration file allows you to define the site’s colour, typography and spacing. These values are 
+    used in a set of mixins, functions, and standardized style definitions in the core theme. Together they
+    are designed to keep your site consistent and proportional at all device widths.
+   
+    COLOURS
+   
+    Colours are defined as a series of variables. Alongside those variables are various derivative colours
+    defined in corresponding colour map. Derivatives may be colour definitions from the design or generated
+    through various SASS colour functions. 
+   
+    Derivative colours have predefined names:
+      - Shade: A darker version of the colour (a mix with black)
+      - Primary: The core colour
+      - Tint: A mix with white.
+      - Fade: A light mix with white or a desaturated version.
+      - Watermark: A light/desaturated version intended for backgrounds.
+     
+    The core library provides a colour assignment function as follows:
+      set-colour($colour_variable_number,$derivative)
+      e.g. set-colour(1,'tint')
+      
+    
+    MODULAR SCALE
+    
+    See https://www.modularscale.com .
+    
+    Structure and typography use the module scale libary, which allows you to define spacing and sizing using
+    integers instead of values. It then uses a scale – defined below – to generate proportional values.
+    
+    Elements can thus be spaced relative to each other via the integers (e.g. -1 is smaller than 0 is smaller
+    than 1), and calculated at various degrees of size and spatiousness by the scale (a scale of 1 is pretty 
+    small and tight while for instance the golden mean ratio, 1.618, will feel large and roomy. 
+    
+    A note about zero in modular scale: Setting an integer to 0 does NOT return a 0 value. Those must be
+    set explicitly (e.g. margin-top: 0 rather than +set-margin-top(0)). A zero value is the base value provided.
+    
+    For instance, if the base value is 1em and the scale is 1.5, an MS factor of 0 would return 1em, while
+    an ms factor of 1 would return the next “note” on the scale, 1.5em. For reference -1 would return
+    the value divided by the scale, so 1em/1.5 = 0.667em .
+    
+    The link above is a handy tool to see the scale in action. A list of $scale values are provided at the
+    end of the file.
+    
+    TUNING PROPORTIONS
+    
+    The configuration options allow you to “tune” the site proportionally based on the modular scale. By
+    adjusting the values you can control most of the key site elements while still maintaining proportion.
+    
+    Key options:
+    
+    $max_width
+      This allows you to define the maximum width of main body of the site. By default the headers and
+      footers are 100% width.
+    
+    $breakpoints
+      Define where your breakpoints are. Usually the standardized one provided should be sufficient, but
+      there may be cases where breakpoints must align with client-side scripting or server provided values.
+      
+    $rootsize
+      Assigned to the root (html element). If you use rem units your site will be proportional to this value.
+      100% is the default value assigned by the browser (usually 16px).
+      
+    $basetypesize
+      The defines the unit of measure (and base multiplier) used throughout the site. All type and other
+      sizing will be a module scale factor of this unit. It is recommend that you leave it at 1rem, as 
+      rem units will remain the same size regardless of context.
+      
+    $blh
+      Baseline height. This is the basic unit for all spacing. All spacing will be a module scale factor of
+      this unit. Rem is recommended as its unit. 1.5rem is  standard if spacious, while 1rem is very tight.
+    
+    $sizefactors
+      A SASS map that allows you to define key type elements in proportion to each other. It is recommended
+      that the base be 0 for clarity, which would return the $basetypesize (in proportion to the rootsize
+      for rem and em values). Header heights can be adjusted to the design.
+      
+    $typescale
+      This allows you to present different sized type and spacing at various breakpoints. Keep all values at
+      0 if you want type to be consistent at all device widths.
+      
+    
+    USING THE PROPORTIONAL SYSTEM
+    
+    It's recommended that you look at the a_core/10_library folder for mixins and functions that hook into
+    the proportional scale. Some key functions:
+    
+    Padding and Margins
+    You can set proportional spacing via a “set” notation. Some examples, with default values after the colon:
+      +set-margin($integer:0)
+      +set-padding($integer:0)
+      +set-top-padding($integer:0)
+      +set-bottom-margin($integer:0)
+      +standard-top-margin()  [Sets a margin of the baseline height]
+      
+    
+    General Spacing 
+    This mixin allows you to set proportional spacing for any valid attribute. $factor sets the general
+    spacing integer. $increment increase or decrease the spacing factor at every breakpoint, making
+    spacing tigher on small device widths and roomier on large ones. $limit allows you to limit the
+    increment to a single step up or down, thus preventing extremes at both ends.
+    
+      +spacing($property: padding, $factor: 0,$increment: 1,$limit: false)
+      
+    Incrementing
+      Spacing can be incremented by breakpoint, with smaller device widths getting proportionally smaller
+      spacing and large device widths the opposite. A use case would be padding that is small on mobile
+      to conserve space, but large on widescreen monitors.
+      
+      The default increment in all functions is 0. This means that spacing will be consistent across devices.
+      Increments can be set to positive integers, representing the number of points on the scale to go up
+      or down depending on device width, beginning with "med". 
+      
+      Thus an increment of 2 would be normal at med, -2 at sml, -4 at xsml, 2 at lrg and 4 at xlrg.
+      
+    Typography
+    Add proportional font sizes and line heights. Integers are factors of base sizes.
+          
+    +font-size($integer:0)
+    +line-height($integer:0)

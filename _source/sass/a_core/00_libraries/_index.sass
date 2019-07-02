@@ -1,0 +1,13 @@
+/* 
+   @file index.sass 
+   @description  Loads all sass files or subdirectory indices in its directory.
+     NOTE: This file is loaded before most configuration variables, so must contain only mixins and functions.
+     Elements intended to be invoked via @extend should be loaded in 10_definitions/
+     Configuration variables are allowed but only encapsulated in a mixin or function context.
+   @directory  Contains a library of mixins and aninations. Note that everything in this library must be a defined mixin or property set. */
+
+@import '10_vendor/_index.sass'
+@import '11_mixins/_index.sass'
+@import '12_functions/_index.sass'
+@import '13_animations/_index.sass'
+@import '14_font_definitions/_index.sass'

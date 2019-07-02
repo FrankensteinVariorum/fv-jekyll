@@ -1,0 +1,23 @@
+/** 
+ *  @file _index.sass 
+ *  @description  Loads all sass files or subdirectory indices in its directory.
+ *  @directory Styles specific to the current project. Override a_core and b_application SASS where necessary.
+ *
+ *  Libraries: Use for mixins and SASS functions. Libraries are loaded BEFORE configuration.
+ *  Definitions: Placeholders for common styling components ready for SASS @extension. Definitions are loaded AFTER configuration to allow them to access Libraries and Configuration values.
+ *  Base: Use for grid structure, root and body level definitions and base typography.
+ *  Typography: Establish font styles, line heights and weights, with an emphasis on common element definitions. Future iterations may merge this with 40_elements below.
+ *  Elements: Redefinitions of basic HTML elements.
+ *  Components: The heavy lifting. Define targeted styling here. Best practice is to use a structure germane to the application and matched to the template structure. That will make styles easier for others to find.
+ *  Contexts: Styles pertinent to sections of a site or particular pages. For instance, you might define admin styling here, or a specific site page. Think about them as styles meant for injection into particular site situations (see note below).
+ *
+ *  Note on Contexts: Styles in the 50_contexts directory will be separated out of the main SASS build tree in future iterations and injected directly into their contexts.
+ * 
+ */ 
+ 
+@import '00_libraries/_index.sass'
+@import '10_definitions/_index.sass'
+@import '20_base/_index.sass'
+@import '30_elements/_index.sass'
+@import '40_components/_index.sass'
+@import '50_contexts/_index.sass'

@@ -1,0 +1,51 @@
+// HEADINGS ------------------------------
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  color: $black
+  font-family: $headingfont
+  font-weight: $headingfw
+  
+h1,h2,h3
+  width: 100%
+
+h1, .h1
+  +font-size(map-get($sizefactors,'h1'))
+  +line-height(map-get($sizefactors,'h1') - 1)
+  +set-top-margin(1)
+  +set-bottom-margin(0,0)
+
+h2, .h2
+  +font-size(map-get($sizefactors,'h2'))
+  +line-height(map-get($sizefactors,'h2') - 1)
+  +set-top-margin(1,0)
+  +set-bottom-margin(-1,0)
+
+h3, .h3, %h3
+  +font-size(map-get($sizefactors,'h3'))
+  +line-height(map-get($sizefactors,'h3') - 1)
+  +standard-top-margin()
+  margin-bottom: 0
+  text-transform: uppercase
+
+h4, .h4
+  +font-size(map-get($sizefactors,'h4'))
+  +line-height(1)
+  +standard-top-margin()
+  margin-bottom: 0
+  
+h5, .h5
+  +font-size(map-get($sizefactors,'h5'))
+  +line-height(1)
+  +set-top-margin(0,0)
+  font-weight: $normalfw
+  font-style: italic
+  margin-bottom: 0
+  
+h6, .h6
+  +font-size(map-get($sizefactors,'h6'))
+  +line-height(1)
+  +set-top-margin(0,0)
+  margin-bottom: 0
+  font-weight: $normalfw
+  color: $dark_neutral

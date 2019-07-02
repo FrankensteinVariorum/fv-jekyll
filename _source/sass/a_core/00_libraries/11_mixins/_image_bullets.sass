@@ -1,0 +1,47 @@
+// REQUIRES COMPASS
+// http://compass-style.org/reference/compass/typography/lists/bullets/#mixin-pretty-bullets
+
+=image-bullets-compass($bullet-icon, $width: image-width($bullet-icon), $height: image-height($bullet-icon), $line-height: 18px, $padding: 14px) 
+  margin-left: 0
+  li 
+    padding-left: $padding
+    background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2
+    list-style-type: none
+    
+    
+
+=image-bullets($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: $lineheight_factor)
+  margin-left: 0
+  list-style-type: none
+  
+  > *
+    +set-image-bullet($bullet-icon, $width, $height, $padding, $lineheight)
+    
+  
+=set-image-bullet($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: $lineheight_factor)
+
+  $bgleftpos: 0
+  $bgtoppos: 0
+    
+  @if $height != $lineheight
+    $bgtoppos: (rv($lineheight) - rv($height)) / 2
+
+  padding-left: rv($padding) + rv($width)
+  background-image: $bullet-icon
+  background-repeat: no-repeat 
+  background-size: rv($width) rv($height)
+  background-position: $bgleftpos $bgtoppos
+  
+  
+=set-negative-image-bullet($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: $lineheight_factor)
+  position: relative
+  
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    width: rv($width)
+    height: rv($height)
+    left: (rv($padding) + rv($width)) * -1
+    top: (rv($lineheight) - rv($height)) / 2
+    background: $bullet-icon no-repeat 100% 100%

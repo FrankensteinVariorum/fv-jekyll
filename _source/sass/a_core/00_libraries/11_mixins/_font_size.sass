@@ -1,0 +1,19 @@
+// Font size by scale factor
+
+=font-size($factor: 0,$ratio: $scale)
+  font-size: ms($factor,$basetypesize,$ratio)
+  
+// Set notation
+
+=set-font-size($factor: 0,$ratio: $scale)
+  +font-size($factor,$ratio)
+  
+// Unscaled font-size
+
+=base-font-size()
+  font-size: $basetypesize
+  
+// Alias of above
+  
+=base-type-size()
+  +base-font-size()

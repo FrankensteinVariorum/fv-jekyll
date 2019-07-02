@@ -1,0 +1,14 @@
+// NEW IMPLEMENTATION. For the legacy flex implementation see _separated_row_flex.sass
+// $wrap and $rows aren't implemented (yet). If they are needed use the flex implementation.
+
+=separated-row($columns: 4, $separator: -3, $wrap: nowrap, $rows: 2)  
+  $coldef: ""
+  
+  @for $i from 1 through $columns
+    $coldef: $coldef + " 1fr"
+  
+  display: grid
+  width: 100%
+  grid-template-columns: #{$coldef}
+  grid-column-gap: rv($separator)
+  grid-row-grap: rv($separator)

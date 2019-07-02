@@ -1,0 +1,13 @@
+// Returns a value in the standardized site scale. See the _standardized_spacing mixin for other examples of ms implementation..
+
+@function relative_value($factor: 0,$lineheight: $blh, $ratio:$scale)
+  @return ms($factor,$lineheight,$ratio)
+  
+
+// Alias  
+@function rv($factor: 0,$lineheight: $blh, $ratio:$scale)
+  @return ms($factor,$lineheight,$ratio)
+  
+// Another Alias
+@function rs($factor: 0,$lineheight: $blh, $ratio:$scale)
+  @return ms($factor,$lineheight,$ratio)

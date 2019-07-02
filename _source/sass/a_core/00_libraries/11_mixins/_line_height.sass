@@ -1,0 +1,7 @@
+// Returns the line height as a factor of the baseline height to the given scale
+
+=line-height($factor: 0,$ratio: $scale)
+  line-height: ms($factor,$blh,$ratio)
+  
+=set-line-height($factor: 0,$ratio: $scale)
+  +line-height($factor,$ratio)

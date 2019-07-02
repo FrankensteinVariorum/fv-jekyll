@@ -1,0 +1,23 @@
+// Creates a fixed container with aspect ratio.
+// Overflow content is hidden.
+// A width MUST be set for this element. It defaults to auto in case the width is set elsewhere. 
+
+=proportional-height($width: 'none',$ratio: 1)
+  position: relative
+  overflow: hidden
+  
+  @if $width != 'none'
+    width: $width
+  
+  &:before
+    position: relative
+    content: ''
+    display: block
+    padding-top: 100% * $ratio
+  
+  > *
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
