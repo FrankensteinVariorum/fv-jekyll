@@ -53,7 +53,12 @@ var paths = {
 		input: '_source/copy/**/*',
 		output: 'assets/'
 	},
-	reload: './_build/'
+	reload: './_build/',
+	agiledev: {
+  	jekyll: {
+    	localbuildpath: '_site_local'
+    }
+	}
 };
 
 
@@ -305,7 +310,7 @@ function jekyll() {
 
 // Jekyll FV Local
 function jekyllLocal() {
-  return cp.spawn("bundle", ["exec", "jekyll", "build","-d ../html"], { stdio: "inherit" });
+  return cp.spawn("bundle", ["exec", "jekyll", "build","-d" + paths.agiledev.jekyll.localbuildpath], { stdio: "inherit" });
 }
 
 
