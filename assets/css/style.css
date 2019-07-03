@@ -292,7 +292,7 @@
   font-family: 'ITCFranklinGothic';
   font-style: italic;
   font-weight: 800;
-  src: url("../fonts/itc-franklin-gothic/ITCFranklinGothicStd-HeavyItalic.eot");
+  src: url("../fonts/itc-franklin-gothic/ITCFranklinGothicStd-HvyIt.eot");
   src: local("ITCFranklinGothic Heavy Italic"), local("ITCFranklinGothicStd-HvyItic"), url("../fonts/itc-franklin-gothic/ITCFranklinGothicStd-HvyIt.eot?#iefix") format("embedded-opentype"), url("../fonts/itc-franklin-gothic/ITCFranklinGothicStd-HvyIt.woff") format("woff"), url("../fonts/itc-franklin-gothic/ITCFranklinGothicStd-HvyIt.ttf") format("truetype"), url("../fonts/itc-franklin-gothic/ITCFranklinGothicStd-HvyIt.svg#ITCFranklinGothic") format("svg");
 }
 
@@ -348,15 +348,6 @@
   font-weight: 700;
   src: url("../fonts/miller-display/MillerDisplay-Bold.eot");
   src: local("MillerDisplay Bold"), local("MillerDisplay-Bold"), url("../fonts/miller-display/MillerDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/miller-display/MillerDisplay-Bold.woff") format("woff"), url("../fonts/miller-display/MillerDisplay-Bold.ttf") format("truetype"), url("../fonts/miller-display/MillerDisplay-Bold.svg#MillerDisplay") format("svg");
-}
-
-/* miller-display-700italic  */
-@font-face {
-  font-family: 'MillerDisplay';
-  font-style: italic;
-  font-weight: 700;
-  src: url("../fonts/miller-display/MillerDisplay-Bolditalic.eot");
-  src: local("MillerDisplay Bold Italic"), local("MillerDisplay-BoldItalic"), url("../fonts/miller-display/MillerDisplay-Bolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/miller-display/MillerDisplay-Bolditalic.woff") format("woff"), url("../fonts/miller-display/MillerDisplay-Bolditalic.ttf") format("truetype"), url("../fonts/miller-display/MillerDisplay-Bolditalic.svg#MillerDisplay") format("svg");
 }
 
 /* !UI STANDARDIZATION */
@@ -1856,12 +1847,37 @@ main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
 /**
  *  @file _index.sass
  *  @description  Loads all sass files or subdirectory indices in its directory.  */
+/*
+   @file index.sass
+   @description  Loads all sass files or subdirectory indices in its directory. */
 #viewer > * {
   margin-bottom: 1.5rem;
 }
 
 #viewer > *:last-child {
   margin-bottom: 0;
+}
+
+#viewer__controls {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-gap: 1.5rem;
+}
+
+#viewer__controls > * {
+  padding-top: 1.06066rem;
+  padding-bottom: 1.06066rem;
+}
+
+#viewer_pagination_controls {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-gap: 1.5rem;
+}
+
+#viewer_pagination_controls > * {
+  padding-top: 1.06066rem;
+  padding-bottom: 1.06066rem;
 }
 
 .viewer__cols {
@@ -1871,7 +1887,6 @@ main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
 }
 
 .viewer__cols > * {
-  background-color: #f3f3f3;
   padding-top: 1.06066rem;
   padding-bottom: 1.06066rem;
 }
@@ -1904,6 +1919,174 @@ main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.line {
+  border-top: 6px solid;
+  background-color: #f3f3f3;
+}
+
+/*
+   @file viewer/_general.sass
+   @author Research Software Company
+   @description Frankenstein Variorum Viewer general styles . */
+.fontfamily-base {
+  font-family: Georgia, serif;
+}
+
+.fontfamily-heading {
+  font-family: "MillerDisplay", Georgia, serif;
+}
+
+.fontfamily-alt {
+  font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: gray;
+  margin-right: 10px;
+}
+
+.dot-break {
+  opacity: 0;
+}
+
+.select-style {
+  width: 200px;
+}
+
+.ed-1818 {
+  background-color: #FDB27B;
+}
+
+.ed-1823 {
+  background-color: #6FBCC0;
+}
+
+.ed-1831 {
+  background-color: #D95369;
+}
+
+.ed-Thomas {
+  background-color: #E378BF;
+}
+
+.ed-MS {
+  background-color: #8380E2;
+}
+
+button {
+  cursor: pointer;
+}
+
+.disable-button {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.right {
+  float: right;
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.in-row {
+  display: inline-block;
+}
+
+.margin-button {
+  margin-left: 20px;
+}
+
+.options-label {
+  display: block;
+}
+
+.edition-label {
+  margin-right: 20px;
+}
+
+.tei-del .tei-cdata {
+  text-decoration: line-through;
+}
+
+.in-line {
+  display: inline-block;
+}
+
+.paging-buttons {
+  margin-left: 25px;
+}
+
+/*
+   @file viewer/_tei.sass
+   @author Research Software Company
+   @description Frankenstein Variorum Viewer TEI styles. */
+.tei-cdata {
+  line-height: 3em;
+}
+
+.tei-cdata.no-text {
+  opacity: 0;
+}
+
+.tei-cdata.tei-del {
+  text-decoration: line-through;
+}
+
+.app-intensity-0 {
+  background-color: whitesmoke;
+}
+
+.app-intensity-1 {
+  background-color: #d9d7d6;
+}
+
+.app-intensity-2 {
+  background-color: #c5c3c1;
+}
+
+.app-intensity-3 {
+  background-color: #b2afac;
+}
+
+.tei-container div {
+  display: inline;
+}
+
+.reading-group-content div {
+  display: inline;
+}
+
+.app-wrapper {
+  position: relative;
+}
+
+.app-wrapper-dots {
+  width: 200px;
+  position: absolute;
+  top: 1em;
+  left: 0;
+}
+
+.app-wrapper-dots.no-text {
+  top: 0;
+  left: 1em;
 }
 
 /*

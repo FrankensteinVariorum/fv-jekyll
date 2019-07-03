@@ -13,7 +13,7 @@ var settings = {
 	jpgs: true,
 	fonts: true,
 	copy: true,
-	reload: true
+	reload: true,
 };
 
 
@@ -24,6 +24,13 @@ var settings = {
 var paths = {
 	input: '_source',
 	output: 'assets',
+	viewerapp: {
+  	input: '_source/viewer/build/**/*',
+  	exclude: '!_source/viewer/build/index.html',
+  	output: 'viewer/',
+  	extract: '_source/viewer/build/index.html',
+  	scriptdest: '_includes/viewer/'
+	},
 	scripts: {
 		input: '_source/js/*',
 		polyfills: '.polyfill.js',
@@ -96,6 +103,9 @@ var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var extract = require('gulp-html-extract');
+var extractText = require('gulp-extract-text');
+var replace = require('gulp-replace');
 var package = require('./package.json');
 
 // Scripts
@@ -240,6 +250,7 @@ var buildStyles = function (done) {
 
 };
 
+
 // Optimize SVG files
 var buildSVGs = function (done) {
 
@@ -299,6 +310,32 @@ var copyFiles = function (done) {
 		.pipe(dest(paths.copy.output));
 
 };
+
+// Move React Viewer component into static site.
+// Exludes the index.html file from the build, which is replaced
+// by Jekyll
+
+var copyViewerComponent = function (done) {
+	return src([paths.viewerapp.input,paths.viewerapp.exclude])
+		.pipe(dest(paths.viewerapp.output));
+}
+
+var extractViewerScripts = function(done) {
+  // Delete the viewer include
+	del.sync([
+		paths.viewerapp.scriptdest
+	]);
+  
+  // Replace with body content of React component
+  
+	return src(paths.viewerapp.extract)
+		.pipe(extractText({
+      pattern_start: "<body>", 
+      pattern_end: "</body>"
+    }))
+    .pipe(replace(/\/static\/js/g,'/viewer/static/js'))
+    .pipe(dest(paths.viewerapp.scriptdest));
+}
 
 
 // Build Jekyll
@@ -372,8 +409,15 @@ exports.default = series(
 		buildPNGs,
 		buildJPGs,
 		buildFonts,
-		copyFiles
+		copyFiles,
+		copyViewerComponent,
+		extractViewerScripts
 	)
+);
+
+exports.buildViewer = series(
+  copyViewerComponent,
+  extractViewerScripts
 );
 
 exports.build = series(
