@@ -1,8 +1,8 @@
 {
-	"name": "blac-quotidian",
+	"name": "Frankenstein Variorum",
 	"version": "0.0.1",
-	"description": "A Stanford University Press Digital Project.",
-	"main": "./dist/your-main-js-file.js",
+	"description": "A digital variorum.",
+	"main": "",
 	"author": {
 		"name": "Agile Humanities Agency | Bill Kennedy",
 		"url": "https://agilehumanities.ca"
@@ -10,7 +10,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://agile.git.beanstalkapp.com/sup-black-quotidian.git"
+		"url": "https://agile.git.beanstalkapp.com/frankenstein-variorum.git"
 	},
 	"devDependencies": {
 		"gulp": "^4.0.0",

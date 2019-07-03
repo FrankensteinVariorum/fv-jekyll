@@ -1,9 +1,9 @@
 /*!
- * blac-quotidian v0.0.1
- * A Stanford University Press Digital Project.
+ * Frankenstein Variorum v0.0.1
+ * A digital variorum.
  * (c) 2019 Agile Humanities Agency | Bill Kennedy
  * MIT License
- * https://agile.git.beanstalkapp.com/sup-black-quotidian.git
+ * https://agile.git.beanstalkapp.com/frankenstein-variorum.git
  */
 
 @charset "UTF-8";
@@ -1836,6 +1836,18 @@ h1 {
 main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
   max-width: 800px;
   margin: 0 auto;
+}
+
+.fontfamily-base {
+  font-family: Georgia, serif;
+}
+
+.fontfamily-heading {
+  font-family: "MillerDisplay", Georgia, serif;
+}
+
+.fontfamily-alt {
+  font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
 }
 
 /*

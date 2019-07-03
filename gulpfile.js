@@ -390,6 +390,11 @@ exports.sass = series(
 	buildStyles
 );
 
+exports.js = series(
+	buildScripts,
+	lintScripts,
+);
+
 // Watch and reload
 // gulp watch
 exports.watch = series(
