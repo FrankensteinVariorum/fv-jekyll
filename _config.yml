@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Frankenstein Variorum
-email: your-email@example.com
+email: 
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -26,8 +26,8 @@ github_username: PghFrankenstein
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
+encoding: utf-8
 
 destination: /var/www/html
 
@@ -45,3 +45,6 @@ exclude:
   - gulpfile.js
   - package.json
   - package-lock.json
+  
+compress_html:
+  clippings: all

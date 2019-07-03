@@ -342,9 +342,18 @@ var reloadBrowser = function (done) {
 
 // Watch for changes
 var watchSrc = function (done) {
-	watch(paths.input, series(exports.default, reloadBrowser));
+	watch(paths.input, series(exports.default, jekyll, reloadBrowser));
 	done();
 };
+
+
+// Watch for changes
+var watchLocalSrc = function (done) {
+	watch(paths.input, series(exports.default, jekyllLocal, reloadBrowser));
+	done();
+};
+
+
 
 
 /**
@@ -385,6 +394,13 @@ exports.sass = series(
 // gulp watch
 exports.watch = series(
 	exports.default,
+	jekyll,
 	startServer,
 	watchSrc
 );
+
+exports.watchLocal = series(
+  exports.default,
+  jekyllLocal,
+  watchLocalSrc
+)

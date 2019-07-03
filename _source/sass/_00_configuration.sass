@@ -16,10 +16,12 @@ $media_type: screen
 $feature: min-width
 $max_width: 1400px
 
+$legible_inset_width: 800px
+
 // Used to define a standard proportion across the site as per the modularscale library
 // See ./a_core/10_libraries/10_vendor/modularscale/modularscale/_vars.scss for $scale references
 
-$scale: 1.25 // Major third. See scales below. 
+$scale: 1.41421 // Augmented Fourth. See scales below. 
 $standard_sidebar_width: 100% - (100/$scale)
 
 $masthead_height: 100px
@@ -108,11 +110,11 @@ $blh: 1.5rem  // baseline height and unit – also used as a factor in standardi
 
 // Set size factors for type. Size factors are a funciton of $basetypesize, $scale and device-width determined $typesscale
 
-$sizefactors: (base: 0, h1: 5, h2: 3, h3: 2, h4: 1, h5: 0, h6: 0)
+$sizefactors: (base: 0, h1: 4, h2: 3, h3: 2, h4: 1, h5: 0, h6: 0)
 
 // Scale factor for type at each breakpoint. Set to 0 to keep size consistent.
 
-$typescale: (base: 0, xsml: 0, sml: -1, med:-1, lrg: -1, xlrg: 0, xxlrg: 0)
+$typescale: (base: 0, xsml: 0, sml: 0, med: 0, lrg: 0, xlrg: 0, xxlrg: 0)
 
 // Type faces are defined in 00_configuration folders, which get loaded before all other styles.
 
@@ -124,19 +126,19 @@ $typescale: (base: 0, xsml: 0, sml: -1, med:-1, lrg: -1, xlrg: 0, xxlrg: 0)
 +font-miller-display()
 
 $basefont: Georgia, serif
-$headingfont: "ITCFranklinGothic", Helvetica, Arial, sans-serif
-$altfont: "MillerDisplay", Georgia, serif
+$headingfont: "MillerDisplay", Georgia, serif
+$altfont: "ITCFranklinGothic", Helvetica, Arial, sans-serif
 $codefont: "Andale Mono", Monaco, Courier New, monospace
 
 // available base (b), heading (h) and alt (a) sizes listed
 
 $extralightfw: 100
 $thinfw: 200
-$lightfw: 300       // a
+$lightfw: 300       // h
 $normalfw: 400      // b, h, a
 $mediumfw: 500
 $semiboldfw: 600    // h, a
-$boldfw: 700        // b, a
+$boldfw: 700        // b, h
 $extraboldfw: 800   // h, a
 $blackfw: 900
 
