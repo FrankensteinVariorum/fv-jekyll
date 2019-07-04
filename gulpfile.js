@@ -29,7 +29,9 @@ var paths = {
   	exclude: '!_source/viewer/build/index.html',
   	output: 'viewer/',
   	extract: '_source/viewer/build/index.html',
-  	scriptdest: '_includes/viewer/'
+  	scriptdest: '_includes/viewer/',
+  	mediain: '_source/viewer/build/static/media/**/*',
+  	mediaout: 'static/media/'
 	},
 	scripts: {
 		input: '_source/js/*',
@@ -311,11 +313,35 @@ var copyFiles = function (done) {
 
 };
 
-// Move React Viewer component into static site.
-// Exludes the index.html file from the build, which is replaced
-// by Jekyll
+// The React component is currently a standalone web app,
+// with its assets (including styles, scripts and media)
+// bundled. This process is designed to integrate the React app
+// with Jekyll without resorting to an iframe approach, so it
+// can share common styles etc.
+
+
+// It's a bit hackeriffic. It currently copies the all the react
+// supporting files into their place in the site structure. It
+// omits the index.html file, which is then processed
+// by the extractViewerScripts process below. This script
+// extracts the <body> content and places it as a snippet
+// in Jekyll's _include folder, to be bundled into the viewer
+// page. Some re-pathing needs to happen to load the scripts.
+
+// One exception is media files, whose paths are generated in
+// React itself. Since the goal is to have the React app function
+// as a standalone and as a component, these files are copied rather
+// than modifying the app.
 
 var copyViewerComponent = function (done) {
+	del.sync([
+		paths.viewerapp.mediaout
+	]);
+	
+	var mediacopy = src(paths.viewerapp.mediain)
+		.pipe(dest(paths.viewerapp.mediaout));
+
+  
 	return src([paths.viewerapp.input,paths.viewerapp.exclude])
 		.pipe(dest(paths.viewerapp.output));
 }
@@ -436,7 +462,7 @@ exports.sass = series(
 
 exports.js = series(
 	buildScripts,
-	lintScripts,
+	lintScripts
 );
 
 // Watch and reload
