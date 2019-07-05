@@ -3,12 +3,16 @@ h1
   text-align: center
   width: 100%
 
-
 main
+  line-height: $blh * 1.5
+  
+  > *
+    margin-left: auto
+    margin-right: auto
+
   > p, h1, h2, h3, h4, h5, h6
     max-width: $legible_inset_width
-    margin: 0 auto
-    
+    line-height: inherit
 
 .fontfamily-base
   font-family: $basefont
@@ -18,3 +22,66 @@ main
   
 .fontfamily-alt
   font-family: $altfont
+  
+  
+$h2_ornament_width: 300px
+$h3_ornament_width: 200px
+  
+
+h2
+  font-style: italic
+  width: 100%
+  text-align: center
+  
+main
+  h2
+    position: relative
+    border-bottom: 2px solid $black
+    padding-bottom: rv(1)
+    margin: rv(3) auto rv(1) auto
+    
+    &:after
+      content: ''
+      z-index: -1
+      position: absolute
+      box-sizing: border-box
+      height: $h2_ornament_width
+      width: $h2_ornament_width
+      top: $h2_ornament_width * -0.125
+      right: $h2_ornament_width * -0.5
+      border-radius: $h2_ornament_width/2
+      background-color: set-colour(1,'watermark')
+  
+h3
+  font-family: $altfont
+  text-transform: uppercase
+  font-weight: $semiboldfw
+
+main
+  h3
+    position: relative
+    
+    &:before
+      z-index: -1
+      content: ''
+      position: absolute
+      box-sizing: border-box
+      height: $h3_ornament_width
+      width: $h3_ornament_width
+      top: $h3_ornament_width * -0.25
+      left: $h3_ornament_width * -0.5
+      border-radius: $h3_ornament_width/2
+      background-color: set-colour(1,'watermark')
+  
+h4
+  font-family: $altfont
+  font-weight: $normalfw
+
+h5
+  font-family: $basefont
+  font-weight: $boldfw
+  text-transform: uppercase
+  
+h6
+  font-family: $basefont
+  font-style: italic

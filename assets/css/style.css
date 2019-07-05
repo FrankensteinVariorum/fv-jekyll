@@ -1824,9 +1824,18 @@ h1 {
   width: 100%;
 }
 
+main {
+  line-height: 2.25rem;
+}
+
+main > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 750px;
+  line-height: inherit;
 }
 
 .fontfamily-base {
@@ -1839,6 +1848,73 @@ main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
 
 .fontfamily-alt {
   font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  font-style: italic;
+  width: 100%;
+  text-align: center;
+}
+
+main h2 {
+  position: relative;
+  border-bottom: 2px solid #3F3730;
+  padding-bottom: 2.12132rem;
+  margin: 4.24261rem auto 2.12132rem auto;
+}
+
+main h2:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 300px;
+  width: 300px;
+  top: -37.5px;
+  right: -150px;
+  border-radius: 150px;
+  background-color: #fff8f2;
+}
+
+h3 {
+  font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+main h3 {
+  position: relative;
+}
+
+main h3:before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  top: -50px;
+  left: -100px;
+  border-radius: 100px;
+  background-color: #fff8f2;
+}
+
+h4 {
+  font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+h5 {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-family: Georgia, serif;
+  font-style: italic;
 }
 
 /*
@@ -1923,7 +1999,40 @@ main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
 
 .line {
   border-top: 6px solid;
-  background-color: whitesmoke;
+}
+
+.variations {
+  width: 60%;
+  height: 60%;
+  float: right;
+}
+
+#viewer_variations {
+  padding-left: 40px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+#viewer__legend-editions {
+  padding-top: 40px;
+}
+
+#viewer__legend-variance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 40px;
+}
+
+#viewer__legend-variance label {
+  font-size: 80%;
+  margin-left: 50px;
+  padding-top: 20px;
 }
 
 /*
@@ -2098,7 +2207,7 @@ main > p, main h1, main h2, main h3, main h4, main h5, main h6 {
   left: 0;
   border-radius: 90px;
   padding: 45px;
-  background-color: #fef4ec;
+  background-color: #fff8f2;
   color: #FFFFFF;
   font-size: 3rem;
   font-family: "MillerDisplay", Georgia, serif;
@@ -2237,7 +2346,7 @@ label.bold-choose {
    @author Research Software Company
    @description Frankenstein Variorum Viewer TEI styles. */
 .tei-container {
-  font-size: 1.25em;
+  font-size: 1em;
   line-height: 3.5em;
   padding: 0.5em 0;
 }
@@ -2291,7 +2400,7 @@ label.bold-choose {
 .app-wrapper-dots {
   width: 200px;
   position: absolute;
-  top: 1.75em;
+  top: 2em;
   left: 0;
 }
 
