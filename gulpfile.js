@@ -8,9 +8,10 @@ var settings = {
 	scripts: true,
 	polyfills: true,
 	styles: true,
-	svgs: true,
-	pngs: true,
-	jpgs: true,
+	svgs: false,
+	pngs: false,
+	jpgs: false,
+	imgs: true,
 	fonts: true,
 	copy: true,
 	reload: true,
@@ -41,6 +42,10 @@ var paths = {
 	styles: {
 		input: '_source/sass/**/*.{scss,sass}',
 		output: 'assets/css/'
+	},
+	imgs: {
+		input: '_source/img/**/*',
+		output: 'assets/img'
 	},
 	svgs: {
 		input: '_source/img/svg/**/*.svg',
@@ -253,6 +258,20 @@ var buildStyles = function (done) {
 };
 
 
+// Copy IMG files. Use in place of buildSVGs, buildJPGs and buildPNG below.
+// It is assumed that images are pre-optimized.
+
+// Copy PNG files
+var buildIMGs = function (done) {
+
+	// Make sure this feature is activated before running
+	if (!settings.imgs) return done();
+
+	return src(paths.imgs.input)
+		.pipe(dest(paths.imgs.output));
+};
+
+
 // Optimize SVG files
 var buildSVGs = function (done) {
 
@@ -272,7 +291,7 @@ var buildPNGs = function (done) {
 	// Make sure this feature is activated before running
 	if (!settings.pngs) return done();
 
-	// Optimize SVG files
+	// Copy PNG files
 	return src(paths.pngs.input)
 		.pipe(dest(paths.pngs.output));
 };
@@ -283,7 +302,7 @@ var buildJPGs = function (done) {
 	// Make sure this feature is activated before running
 	if (!settings.jpgs) return done();
 
-	// Optimize SVG files
+	// Copy JPGs
 	return src(paths.jpgs.input)
 		.pipe(dest(paths.jpgs.output));
 };
@@ -431,6 +450,7 @@ exports.default = series(
 		buildScripts,
 		lintScripts,
 		buildStyles,
+		buildIMGs,
 		buildSVGs,
 		buildPNGs,
 		buildJPGs,

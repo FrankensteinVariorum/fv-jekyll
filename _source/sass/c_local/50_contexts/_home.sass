@@ -1,0 +1,152 @@
+$mhinset: rv(0)
+
+body.home
+  background-color: set-colour(1)
+  > header
+    text-align: left
+    background-color: transparent
+    width: initial
+    border: 0
+    margin: rv(-1)
+    padding: 0
+    position: relative
+    
+    +bp(med)
+      position: absolute
+      top: $mhinset
+      left: $mhinset
+      width: calc(50vw - #{$mhinset})
+      max-width: calc(50vw - #{$mhinset})
+    
+    &:after
+      top: 0
+    
+    nav
+      position: absolute
+      left: rv(3)
+      margin: 0
+      padding: 0
+      top: rv(2)/-2
+      font-size: rv(-2)
+            
+      +bp(lrg)
+        font-size: rv(-1)
+      
+      a
+        margin-right: rv(-1)
+
+  #content-area
+    width: 100vw
+    margin: 0
+        
+    +bp(med)
+      display: grid
+      grid-template-columns: 50% 50%
+      grid-gap: 0
+      height: 100vh
+      max-width: initial
+      padding: 0
+              
+    
+    section
+      padding: rv(1) rv(-1)
+	
+      +bp(med)
+        height: 100vh
+        background-image: url(/assets/img/logo/fv-watermark.svg)
+        background-repeat: no-repeat
+        background-size: 15vw
+        background-position: top rv(5) left rv(4)
+        display: flex
+        flex-direction: column
+        justify-items: flex-end
+        padding: rv(4) rv(2) rv(4) rv(4)
+        font-size: fluid_type(rv(0),rv(3),map-get($breakpoints,'med'),map-get($breakpoints,'xxlrg'))
+        line-height: fluid_type(rv(0),rv(3),map-get($breakpoints,'med'),map-get($breakpoints,'xxlrg'))
+        
+        > *:first-child
+          margin-top: auto
+
+      
+    aside    
+      padding: rv(1) rv(-1)
+      position: relative
+      
+      +bp(med)
+        padding: 0
+        
+      &:after
+        content: ''
+        position: absolute
+        bottom: rv(3)
+        right: rv(3)
+        z-index: 2
+        height: rv(5)
+        width: rv(5)
+        background-image: url(/assets/img/logo/fv-watermark.svg)
+        background-repeat: no-repeat
+        
+    
+      img
+        z-index: 1
+        +bp(med)
+          width: 50vw
+          height: 100vh
+          max-width: initial
+          object-fit: cover
+          object-position: 50% 50%
+
+          
+      
+  h1
+    font-style: normal
+    text-transform: uppercase
+    text-align: left
+    border: 0
+    margin: 0
+    padding: 0
+    font-weight: $normalfw
+    +font-size(3)
+    
+    +bp(med)
+      font-size: 3em
+      line-height: 1.5em
+    
+  .subtitle
+    font-family: $altfont
+    text-transform: uppercase
+    font-size: 1em
+    line-height: 1.5em
+    
+    
+    
+  #home-title
+    margin: rv(2) 0 rv(2) 0
+    
+    +bp(med)
+      margin: rv(4) 0 rv(4) 0
+      font-size: 0.5em
+    
+      .attribution
+        font-size: 1em
+        line-height: 1.5em
+    
+  #epigraph
+    font-family: $headingfont
+    font-style: italic
+    
+    .epigraph-source
+      font-style: normal
+      text-transform: uppercase
+      
+    +bp(med)
+      font-size: 0.5em
+      line-height: 1.5em
+
+      
+  > footer
+    margin: 0
+    border-top: 0
+    
+    &:before
+      display: none

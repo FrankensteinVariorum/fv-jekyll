@@ -33,6 +33,14 @@
 /* Retrives a derivative colour from a colour map */
 /* @file
  * Converts HSB colours (e.g. as defined in Adobe CC or Sketch) into SASS-supported HSL colours. */
+/* Strips units from a value. h/t to https://css-tricks.com/snippets/sass/strip-unit-function/ */
+/* Scales typography for any screen size. h/t https://www.madebymike.com.au/writing/precise-control-responsive-typography/
+  @var
+
+  $min_size: Minimum font size in any unit
+  $max_size: Maximum font size in any unit
+  $min_viewport_width: Sets the lower bound breakpoint to stop scaling. E.g. map-get($breakpoints,'med')
+  $max_viewport_width: Sets the upper bound breakpoint to stop scaling. E.g. map-get($breakpoints,'xxlrg') */
 /*
    @file index.sass
    @description  Loads all sass files or subdirectory indices in its directory.
@@ -487,7 +495,7 @@ textarea {
 
 .btn, input[type='button'] {
   color: #3F3730;
-  background-color: #FFFFFF;
+  background-color: transparent;
   border: 1px solid #3F3730;
 }
 
@@ -1667,6 +1675,20 @@ body > header {
   height: 100px;
   text-align: center;
   background-color: #FDDAC0;
+  border-bottom: 3px solid #d7b9a3;
+}
+
+body > header:after {
+  --mh: 100px;
+  --markheight: 2.99998rem;
+  content: '';
+  height: var(--markheight);
+  width: var(--markheight);
+  top: calc(var(--mh) + var(--markheight)/-2);
+  position: absolute;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/logo/fv-mark.svg);
 }
 
 body > header nav {
@@ -1821,7 +1843,16 @@ main p:first-of-type {
 h1 {
   font-weight: 300;
   text-align: center;
-  width: 100%;
+  width: 90%;
+  padding-bottom: 4.24261rem;
+  margin-bottom: 4.24261rem;
+  border-bottom: 4px double #3F3730;
+}
+
+@media only screen and (min-width: 56.25em) {
+  h1 {
+    width: 70%;
+  }
 }
 
 main {
@@ -2563,3 +2594,198 @@ label.bold-choose {
 /*
    @file index.sass
    @description  Loads all sass files or subdirectory indices in its directory. */
+body.home {
+  background-color: #FDDAC0;
+}
+
+body.home > header {
+  text-align: left;
+  background-color: transparent;
+  width: initial;
+  border: 0;
+  margin: 1.06066rem;
+  padding: 0;
+  position: relative;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home > header {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: calc(50vw - 1.5rem);
+    max-width: calc(50vw - 1.5rem);
+  }
+}
+
+body.home > header:after {
+  top: 0;
+}
+
+body.home > header nav {
+  position: absolute;
+  left: 4.24261rem;
+  margin: 0;
+  padding: 0;
+  top: -1.49999rem;
+  font-size: 0.75rem;
+}
+
+@media only screen and (min-width: 75em) {
+  body.home > header nav {
+    font-size: 1.06066rem;
+  }
+}
+
+body.home > header nav a {
+  margin-right: 1.06066rem;
+}
+
+body.home #content-area {
+  width: 100vw;
+  margin: 0;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home #content-area {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 0;
+    height: 100vh;
+    max-width: initial;
+    padding: 0;
+  }
+}
+
+body.home #content-area section {
+  padding: 2.12132rem 1.06066rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home #content-area section {
+    height: 100vh;
+    background-image: url(/assets/img/logo/fv-watermark.svg);
+    background-repeat: no-repeat;
+    background-size: 15vw;
+    background-position: top 8.48517rem left 5.99994rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-items: flex-end;
+    padding: 5.99994rem 2.99998rem 5.99994rem 5.99994rem;
+    font-size: calc(1.5rem + 2.74261 * ((100vw - 56.25em) / 73.75));
+    line-height: calc(1.5rem + 2.74261 * ((100vw - 56.25em) / 73.75));
+  }
+  body.home #content-area section > *:first-child {
+    margin-top: auto;
+  }
+}
+
+body.home #content-area aside {
+  padding: 2.12132rem 1.06066rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home #content-area aside {
+    padding: 0;
+  }
+}
+
+body.home #content-area aside:after {
+  content: '';
+  position: absolute;
+  bottom: 4.24261rem;
+  right: 4.24261rem;
+  z-index: 2;
+  height: 8.48517rem;
+  width: 8.48517rem;
+  background-image: url(/assets/img/logo/fv-watermark.svg);
+  background-repeat: no-repeat;
+}
+
+body.home #content-area aside img {
+  z-index: 1;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home #content-area aside img {
+    width: 50vw;
+    height: 100vh;
+    max-width: initial;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+}
+
+body.home h1 {
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: left;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 2.82841rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home h1 {
+    font-size: 3em;
+    line-height: 1.5em;
+  }
+}
+
+body.home .subtitle {
+  font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+body.home #home-title {
+  margin: 2.99998rem 0 2.99998rem 0;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home #home-title {
+    margin: 5.99994rem 0 5.99994rem 0;
+    font-size: 0.5em;
+  }
+  body.home #home-title .attribution {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}
+
+body.home #epigraph {
+  font-family: "MillerDisplay", Georgia, serif;
+  font-style: italic;
+}
+
+body.home #epigraph .epigraph-source {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 56.25em) {
+  body.home #epigraph {
+    font-size: 0.5em;
+    line-height: 1.5em;
+  }
+}
+
+body.home > footer {
+  margin: 0;
+  border-top: 0;
+}
+
+body.home > footer:before {
+  display: none;
+}

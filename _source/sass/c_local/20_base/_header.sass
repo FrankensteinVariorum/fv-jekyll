@@ -1,11 +1,28 @@
+$markheight: rv(2)
+
 body
   > header
+      
     margin: 0
     max-width: 100%
     width: 100%
     height: $masthead_height
     text-align: center
     background-color: set-colour(1)
+    border-bottom: 3px solid set-color(1,'shade')
+
+    &:after
+      --mh: #{$masthead_height}
+      --markheight: #{$markheight}
+      
+      content: ''
+      height: var(--markheight)
+      width: var(--markheight)
+      top: calc(var(--mh) + var(--markheight)/-2)
+      position: absolute
+      margin: 0 auto
+      background-repeat: no-repeat
+      background-image: url(/assets/img/logo/fv-mark.svg)
     
     nav
       height: 100%
