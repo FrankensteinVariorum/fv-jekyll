@@ -1837,6 +1837,10 @@ main p:first-of-type {
   margin-top: 2.99998rem;
 }
 
+section {
+  overflow: initial;
+}
+
 /*
    @file index.sass
    @description  Loads all sass files or subdirectory indices in its directory. */
@@ -2120,12 +2124,22 @@ h6 {
 .viewer__cols {
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
-  grid-gap: 1.5rem;
+  grid-column-gap: 2.12132rem;
 }
 
 .viewer__cols > * {
   padding-top: 1.06066rem;
   padding-bottom: 1.06066rem;
+}
+
+#viewer_variations {
+  min-height: 100vh;
+}
+
+#viewer_variations > * {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 #viewer__marginalia {
@@ -2166,15 +2180,6 @@ h6 {
   width: 60%;
   height: 60%;
   float: right;
-}
-
-#viewer_variations {
-  padding-left: 40px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: 100vh;
 }
 
 #viewer__legend-editions {
@@ -2338,7 +2343,7 @@ h6 {
 }
 
 #viewer__legend-variance label {
-  line-height: 0.5em;
+  line-height: 1em;
   padding-right: 0.5em;
 }
 
@@ -2417,11 +2422,11 @@ h6 {
   content: '';
   font-size: 2em;
   color: #8c8783;
-  padding: 0.5em 0.25em 0 0.3em;
+  padding: 0.5em 0.25em 0 0.4em;
 }
 
 #viewer__controls input[type='checkbox']:checked:before {
-  content: '✓';
+  content: 'x';
 }
 
 #viewer input {

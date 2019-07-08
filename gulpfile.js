@@ -311,7 +311,7 @@ var buildJPGs = function (done) {
 var buildFonts = function (done) {
 
 	// Make sure this feature is activated before running
-	if (!settings.jpgs) return done();
+	if (!settings.fonts) return done();
 
 	// Optimize SVG files
 	return src(paths.fonts.input)
