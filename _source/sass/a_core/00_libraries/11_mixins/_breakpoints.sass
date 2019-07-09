@@ -3,7 +3,7 @@
 =bp($point)
 
   @if $point == xxsml
-    @media only #{$media_type} and ($feature: map-get($breakpoints,'xsml') - 5em)
+    @media only #{$media_type} and ($feature: map-get($breakpoints,'xsml'))
       @content
 
   @else if $point == xsml
@@ -29,3 +29,10 @@
   @else if $point == xxlrg
     @media only #{$media_type} and ($feature: map-get($breakpoints,'xxlrg'))
       @content
+      
+
+// Vertical breakpoints
+      
+=vbp($point)
+  @media only #{$media_type} and ($vfeature: map-get($vbreakpoints,$point))
+    @content

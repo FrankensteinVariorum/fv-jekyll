@@ -7,7 +7,7 @@ body.home
     background-color: transparent
     width: initial
     border: 0
-    margin: rv(-1)
+    margin: 0
     padding: 0
     position: relative
     
@@ -53,19 +53,28 @@ body.home
 	
       +bp(med)
         height: 100vh
-        background-image: url(/assets/img/logo/fv-watermark.svg)
-        background-repeat: no-repeat
-        background-size: 15vw
-        background-position: top rv(5) left rv(4)
         display: flex
         flex-direction: column
         justify-items: flex-end
-        padding: rv(4) rv(2) rv(4) rv(4)
+        padding: rv(4) $mhinset rv(3) $mhinset
         font-size: fluid_type(rv(0),rv(3),map-get($breakpoints,'med'),map-get($breakpoints,'xxlrg'))
         line-height: fluid_type(rv(0),rv(3),map-get($breakpoints,'med'),map-get($breakpoints,'xxlrg'))
         
+        +bp(lrg)
+          padding: rv(4) rv(2) rv(3) rv(4)
+
         > *:first-child
           margin-top: auto
+      
+      // watermark
+      
+      +vbp(med)
+        +bp(med)
+          background-image: url(/assets/img/logo/fv-watermark.svg)
+          background-repeat: no-repeat
+          background-size: 15vw
+          background-position: top rv(5) left rv(4)
+
 
       
     aside    
@@ -95,8 +104,6 @@ body.home
           max-width: initial
           object-fit: cover
           object-position: 50% 50%
-
-          
       
   h1
     font-style: normal
@@ -119,17 +126,21 @@ body.home
     line-height: 1.5em
     
     
-    
   #home-title
-    margin: rv(2) 0 rv(2) 0
-    
+    margin: rv(0) 0
+        
     +bp(med)
-      margin: rv(4) 0 rv(4) 0
       font-size: 0.5em
     
       .attribution
         font-size: 1em
         line-height: 1.5em
+        
+    +vbp(short)
+      margin: rv(2) 0
+      
+    +vbp(med)
+      margin: rv(4) 0
     
   #epigraph
     font-family: $headingfont
@@ -142,7 +153,10 @@ body.home
     +bp(med)
       font-size: 0.5em
       line-height: 1.5em
-
+      
+  #home-cta.btn
+    &:hover
+      background-color: set-colour(1,'shade')
       
   > footer
     margin: 0
