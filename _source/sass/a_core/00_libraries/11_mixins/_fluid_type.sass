@@ -1,0 +1,19 @@
+/* Scales typography for any screen size. h/t https://www.madebymike.com.au/writing/precise-control-responsive-typography/
+  and Indrek Paas https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+  
+  @var
+  $min_size: Minimum font size in em or rem
+  $max_size: Maximum font size in em or rem
+  $min_viewport_width: Sets the lower bound breakpoint to stop scaling. E.g. map-get($breakpoints,'med') */
+
+=fluid-type($min-value, $max-value,$min-vw, $max-vw,$properties: font-size)
+  @each $property in $properties
+    #{$property}: $min-value
+
+  @media (min-width: $min-vw)
+    @each $property in $properties
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+
+  @media (min-width: $max-vw)
+    @each $property in $properties
+      #{$property}: $max-value

@@ -25,6 +25,13 @@
    @description  Loads all sass files or subdirectory indices in its directory.
 
    @directory  Contains a library of mixins  */
+/* Scales typography for any screen size. h/t https://www.madebymike.com.au/writing/precise-control-responsive-typography/
+  and Indrek Paas https://www.sassmeister.com/gist/7f22e44ace49b5124eec
+
+  @var
+  $min_size: Minimum font size in em or rem
+  $max_size: Maximum font size in em or rem
+  $min_viewport_width: Sets the lower bound breakpoint to stop scaling. E.g. map-get($breakpoints,'med') */
 /* Thankyou Natalia Onischuk http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation */
 /**
  *  @file _index.sass
@@ -37,8 +44,8 @@
 /* Scales typography for any screen size. h/t https://www.madebymike.com.au/writing/precise-control-responsive-typography/
   @var
 
-  $min_size: Minimum font size in any unit
-  $max_size: Maximum font size in any unit
+  $min_size: Minimum font size in em or rem
+  $max_size: Maximum font size in em or rem
   $min_viewport_width: Sets the lower bound breakpoint to stop scaling. E.g. map-get($breakpoints,'med')
   $max_viewport_width: Sets the upper bound breakpoint to stop scaling. E.g. map-get($breakpoints,'xxlrg') */
 /*
@@ -246,7 +253,7 @@
 
   336px 	  21em       xsml
   600px 	  37.5em     sml
-  900px 	  56.25      med
+  900px 	  46.25      med
   1200px    75em       lrg
   1800px	  100em      xlrg   */
 /* Vertical Breakpoints */
@@ -1973,7 +1980,7 @@ h6 {
 
   336px 	  21em       xsml
   600px 	  37.5em     sml
-  900px 	  56.25      med
+  900px 	  46.25      med
   1200px    75em       lrg
   1800px	  100em      xlrg   */
 /* Vertical Breakpoints */
@@ -2089,6 +2096,10 @@ h6 {
 /* !UI STANDARDIZATION */
 /* !IMAGE PATHS */
 /* Ratios from Modular Scale for reference. Use selected value as scale above. */
+#viewer .viewer__cols > .center-label:first-child {
+  visibility: hidden;
+}
+
 #viewer > * {
   margin-bottom: 1.5rem;
 }
@@ -2137,7 +2148,7 @@ h6 {
 #viewer_variations > * {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 1.5rem;
 }
 
 #viewer__marginalia {
@@ -2500,7 +2511,7 @@ label.bold-choose {
 }
 
 .app-list-to-divider {
-  border-top: 9px solid gray;
+  border-top: 9px solid #9f9b98;
   margin-top: 40px;
 }
 
@@ -2599,6 +2610,32 @@ label.bold-choose {
    @description  Loads all sass files or subdirectory indices in its directory. */
 body.home {
   background-color: #FDDAC0;
+  font-size: 1.5rem;
+  line-height: 1em;
+  overflow-x: hidden;
+}
+
+@media (min-width: 46.25em) {
+  body.home {
+    font-size: calc(1.5rem + 1.49998 * (100vw - 46.25em) / 66.25);
+  }
+}
+
+@media (min-width: 112.5em) {
+  body.home {
+    font-size: 2.99998rem;
+  }
+}
+
+@media only screen and (min-width: 112.5em) {
+  body.home {
+    line-height: 1.25em;
+  }
+}
+
+body.home address, body.home article, body.home aside, body.home dd, body.home div, body.home dl, body.home dt, body.home ol, body.home p, body.home section, body.home td, body.home th, body.home ul {
+  font-size: 1em;
+  line-height: inherit;
 }
 
 body.home > header {
@@ -2632,25 +2669,28 @@ body.home > header nav {
   padding: 0;
   top: -1.49999rem;
   font-size: 0.75rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 75em) {
+@media only screen and (min-width: 46.25em) {
   body.home > header nav {
-    font-size: 1.06066rem;
+    font-size: 0.45em;
   }
 }
 
 body.home > header nav a {
-  margin-right: 1.06066rem;
+  margin-right: 0.75rem;
+  white-space: nowrap;
 }
 
 body.home #content-area {
-  width: 100vw;
   margin: 0;
 }
 
 @media only screen and (min-width: 46.25em) {
   body.home #content-area {
+    width: 100vw;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-gap: 0;
@@ -2660,12 +2700,9 @@ body.home #content-area {
   }
 }
 
-body.home #content-area section {
-  padding: 2.12132rem 1.06066rem;
-}
-
 @media only screen and (min-width: 46.25em) {
   body.home #content-area section {
+    padding: 2.12132rem 1.06066rem;
     height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2676,8 +2713,6 @@ body.home #content-area section {
             flex-direction: column;
     justify-items: flex-end;
     padding: 5.99994rem 1.5rem 4.24261rem 1.5rem;
-    font-size: calc(1.5rem + 2.74261 * ((100vw - 46.25em) / 83.75));
-    line-height: calc(1.5rem + 2.74261 * ((100vw - 46.25em) / 83.75));
   }
 }
 
@@ -2698,13 +2733,20 @@ body.home #content-area section {
     background-image: url(/assets/img/logo/fv-watermark.svg);
     background-repeat: no-repeat;
     background-size: 15vw;
+    background-position: top 8.48517rem left 1.5rem;
+  }
+}
+
+@media only screen and (min-height: 47em) and (min-width: 75em) {
+  body.home #content-area section {
+    background-size: 12vw;
     background-position: top 8.48517rem left 5.99994rem;
   }
 }
 
 body.home #content-area aside {
-  padding: 2.12132rem 1.06066rem;
   position: relative;
+  padding: 2.99998rem 0;
 }
 
 @media only screen and (min-width: 46.25em) {
@@ -2716,8 +2758,8 @@ body.home #content-area aside {
 body.home #content-area aside:after {
   content: '';
   position: absolute;
-  bottom: 4.24261rem;
-  right: 4.24261rem;
+  bottom: 30px;
+  right: 30px;
   z-index: 2;
   height: 8.48517rem;
   width: 8.48517rem;
@@ -2727,6 +2769,7 @@ body.home #content-area aside:after {
 
 body.home #content-area aside img {
   z-index: 1;
+  width: 100%;
 }
 
 @media only screen and (min-width: 46.25em) {
@@ -2749,52 +2792,41 @@ body.home h1 {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  font-size: 2.82841rem;
+  font-size: 1.5em;
+  width: 100%;
+  word-wrap: break-word;
 }
 
-@media only screen and (min-width: 46.25em) {
-  body.home h1 {
-    font-size: 3em;
-    line-height: 1.5em;
-  }
+body.home .attribution {
+  font-size: 0.5em;
 }
 
 body.home .subtitle {
   font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 0.5em;
 }
 
 body.home #home-title {
   margin: 1.5rem 0;
 }
 
-@media only screen and (min-width: 46.25em) {
-  body.home #home-title {
-    font-size: 0.5em;
-  }
-  body.home #home-title .attribution {
-    font-size: 1em;
-    line-height: 1.5em;
-  }
-}
-
 @media only screen and (min-height: 28em) {
   body.home #home-title {
-    margin: 2.99998rem 0;
+    margin: 2.12132rem 0;
   }
 }
 
 @media only screen and (min-height: 47em) {
   body.home #home-title {
-    margin: 5.99994rem 0;
+    margin: 2.99998rem 0;
   }
 }
 
 body.home #epigraph {
   font-family: "MillerDisplay", Georgia, serif;
   font-style: italic;
+  font-size: 0.5em;
 }
 
 body.home #epigraph .epigraph-source {
@@ -2802,10 +2834,13 @@ body.home #epigraph .epigraph-source {
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 46.25em) {
-  body.home #epigraph {
+body.home #home-cta.btn {
+  font-size: 0.7em;
+}
+
+@media only screen and (min-width: 75em) {
+  body.home #home-cta.btn {
     font-size: 0.5em;
-    line-height: 1.5em;
   }
 }
 
@@ -2816,6 +2851,7 @@ body.home #home-cta.btn:hover {
 body.home > footer {
   margin: 0;
   border-top: 0;
+  font-size: 0.4em;
 }
 
 body.home > footer:before {
