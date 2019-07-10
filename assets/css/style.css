@@ -1725,32 +1725,38 @@ body > footer {
   background-color: #3F3730;
   color: #FFFFFF;
   font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
+  font-size: 0.70711rem;
   border-top: 3px solid #FFFFFF;
   z-index: 10;
   margin-top: 4.24261rem;
   padding: 4.24261rem 2.12132rem;
   position: relative;
   bottom: initial;
+  z-index: 0;
+  text-align: center;
+}
+
+body > footer:before {
+  z-index: 1;
+  content: '';
+  height: 4.24261rem;
+  width: 4.24261rem;
+  top: -2.1213rem;
+  margin-left: -2.1213rem;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/logo/fv-mark-reverse.svg);
 }
 
 body > footer > div {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin: 0 auto;
   padding-left: 1.06066rem;
   padding-right: 1.06066rem;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: 1fr;
+  grid-gap: 2.12132rem;
 }
 
 @media only screen and (min-width: 30em) {
@@ -1809,13 +1815,8 @@ body > footer > div {
 
 @media only screen and (min-width: 46.25em) {
   body > footer > div {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: initial;
   }
 }
 
@@ -1830,6 +1831,28 @@ body > footer a:hover {
 
 #footer-content {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-contents: space-between;
+}
+
+#footer-identity {
+  background: url(/assets/img/logo/fv-typemark-reverse.svg) no-repeat;
+  background-position: bottom center;
+  grid-row: 3;
+  height: 4.24261rem;
+}
+
+@media only screen and (min-width: 46.25em) {
+  #footer-identity {
+    grid-row: initial;
+    background-position: bottom left;
+  }
 }
 
 /* !FOOTER END */
@@ -2121,7 +2144,7 @@ h6 {
 
 #viewer_pagination_controls {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 30% 1fr;
   grid-gap: 1.5rem;
 }
 
@@ -2149,6 +2172,8 @@ h6 {
   position: -webkit-sticky;
   position: sticky;
   top: 1.5rem;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 #viewer__marginalia {
@@ -2430,7 +2455,7 @@ h6 {
   content: '';
   font-size: 2em;
   color: #8c8783;
-  padding: 0.5em 0.25em 0 0.4em;
+  padding: 0.5em 0.25em 0 0.45em;
 }
 
 #viewer__controls input[type='checkbox']:checked:before {
@@ -2474,8 +2499,18 @@ label.bold-choose {
   color: #b2afac;
 }
 
-.paging-buttons {
+.in-line.paging-buttons {
   margin-left: 25px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.in-line.paging-buttons button {
+  margin: 1em;
 }
 
 .prev {
@@ -2534,6 +2569,12 @@ label.bold-choose {
   display: inline;
 }
 
+.tei-container div.tei-cit {
+  font-size: 0.9em;
+  display: inline-block;
+  padding: 1em 2em;
+}
+
 .tei-cdata.no-text {
   opacity: 0;
 }
@@ -2573,6 +2614,7 @@ label.bold-choose {
 .app-wrapper {
   position: relative;
   padding: 0.5em 0;
+  border-left: 1px dotted whitesmoke;
 }
 
 .app-wrapper-dots {
@@ -2603,6 +2645,36 @@ label.bold-choose {
   font-size: 0.8em;
   color: #8c8783;
   margin-top: 0.5em;
+}
+
+.tei-bibl {
+  font-style: italic;
+}
+
+/*  A stopgrap solution to bridge differences between the standalone app and the Jekyll version.
+    Mark for removal as soon as final workflow is established. */
+.prev {
+  background: url("/assets/img/viewer/prev_btn.svg") no-repeat;
+}
+
+.prev:hover {
+  background: url("/assets/img/viewer/prev_btn_over.svg") no-repeat;
+}
+
+.prev:disabled {
+  background: url("/assets/img/viewer/prev_btn_inactive.svg") no-repeat;
+}
+
+.next {
+  background: url("/assets/img/viewer/next_btn.svg") no-repeat;
+}
+
+.next:hover {
+  background: url("/assets/img/viewer/next_btn_over.svg") no-repeat;
+}
+
+.next:disabled {
+  background: url("/assets/img/viewer/next_btn_inactive.svg") no-repeat;
 }
 
 /*
