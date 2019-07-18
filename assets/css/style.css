@@ -1984,15 +1984,17 @@ h6 {
   font-style: italic;
 }
 
-.cards {
-  display: grid;
-  width: 100%;
-  grid-template-columns:  1fr 1fr;
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 1.5rem;
+@media only screen and (min-width: 46.25em) {
+  .cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns:  1fr 1fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+  }
 }
 
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 75em) {
   .cards {
     display: grid;
     width: 100%;
@@ -2843,7 +2845,7 @@ label.bold-choose {
   background: url("/assets/img/viewer/next_btn_inactive.svg") no-repeat;
 }
 
-@media only screen and (min-width: 46.25em) {
+@media only screen and (min-width: 75em) {
   #biographies {
     width: 80%;
     margin: 2.12132rem auto;
