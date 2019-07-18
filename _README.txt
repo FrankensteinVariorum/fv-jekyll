@@ -6,6 +6,10 @@ FRANKENSTEIN VARIORUM BASIC USAGE
 
 + Run gulp build to build the site after changes (see Basic Commands below)
 
++ Images and other assets should be placed in the ./_source/img folder. They will be transferred to the /assets when the site is built.
+
++ IMPORTANT: Do NOT place images in the /assets folder. They will be deleted during the build process. Add them to the ./_source/img folder as per above.
+
 + The main menu can be changed in ./_includes/header.html.
 
 + Footer content can be changed in ./_includes/footer.html.
