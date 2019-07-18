@@ -1,0 +1,35 @@
+- name: "Gene Wilder"
+  position: "Assistant Professor of Biology, University of Ingolstadt"
+  bio: "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor</p>"
+  image: 
+    alt: "Image of Gene Wilder"
+    src: "/assets/img/biographies/gene_wilder.jpg"
+  links:
+    - title: "Biography"
+      link: "https://en.wikipedia.org/wiki/Gene_Wilder"
+    - title: "University of Ingolstadt"
+      link: "http://knarf.english.upenn.edu/V1notes/univers.html"
+- name: "Kenneth Branagh"
+  position: "Associate Professor of Bio-engineering, University of Ingolstadt"
+  bio: "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>"
+  image: 
+    alt: "Image of Kenneth Branagh"
+    src: "/assets/img/biographies/kenneth_branagh.jpg"
+  links:
+    - title: "Biography"
+      link: "https://en.wikipedia.org/wiki/Kenneth_Branagh"
+    - title: "University of Ingolstadt"
+      link: "http://knarf.english.upenn.edu/V1notes/univers.html"
+- name: "Elsa Lanchester"
+  position: "Professor of Regligion & Philosophy, University of Geneva"
+  bio: "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>"
+  image: 
+    alt: "Image of Elsa Lanchester"
+    src: "/assets/img/biographies/elsa_lanchester.jpg"
+  links:
+    - title: "Biography"
+      link: "https://www.imdb.com/title/tt0026138/?ref_=nm_flmg_act_83"
+    - title: "University of Ingolstadt"
+      link: "http://knarf.english.upenn.edu/V1notes/univers.html"
+    - title: "Gutenberg Archive: Paradise Lost (full text)"
+      link: "https://www.gutenberg.org/files/20/20-h/20-h.htm"

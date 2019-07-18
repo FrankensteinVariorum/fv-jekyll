@@ -11,14 +11,17 @@ layout: compress
         {% if page.title %}
           <h1>{{page.title}}</h1>
         {% endif %}
-        {{page.content | markdownify}}
+        {{ page.content | markdownify }}
       </main>
       {% if page.categories contains 'viewer' %}
         {% include viewer/index.html %}
       {% endif %}
+      {% if page.biographies == 1 %}
+        {% include biographies.html %}
+      {% endif %}
       {% if page.secondary_content or page.secondary_sidebar %}
         <section id="secondary-content" class='region'>
-          <a name="secondary-content" tabindex="0"></a>{# link is in html.html.twig #}
+          <a name="secondary-content" tabindex="0"></a>
           <div class='content-column{% if page.secondary_sidebar %} with-sidebar{% endif %}'>
             {{ page.secondary_content }}
       
@@ -32,7 +35,7 @@ layout: compress
       {% endif %}
       {% if page.tertiary_content or page.tertiary_sidebar %}
         <section id="tertiary-content"  class='region'>
-          <a name="tertiary-content" tabindex="0"></a>{# link is in html.html.twig #}
+          <a name="tertiary-content" tabindex="0"></a>
           <div class='content-column{% if page.tertiary_sidebar %} with-sidebar{% endif %}'>
             {{ page.tertiary_content }}
       

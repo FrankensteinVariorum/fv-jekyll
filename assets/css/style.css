@@ -1860,10 +1860,6 @@ main {
   margin: 5.99994rem auto;
 }
 
-main p:first-of-type {
-  margin-top: 2.99998rem;
-}
-
 section {
   overflow: initial;
 }
@@ -1919,10 +1915,10 @@ h2 {
 }
 
 main h2 {
-  position: relative;
   border-bottom: 2px solid #3F3730;
   padding-bottom: 2.12132rem;
   margin: 4.24261rem auto 2.12132rem auto;
+  position: relative;
 }
 
 main h2:after {
@@ -1939,17 +1935,26 @@ main h2:after {
   background-color: #fff8f2;
 }
 
+main h1 + h2 {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+main h1 + h2:after {
+  display: none;
+}
+
 h3 {
   font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
 }
 
-main h3 {
+main h3:nth-of-type(2n) {
   position: relative;
 }
 
-main h3:before {
+main h3:nth-of-type(2n):before {
   z-index: -1;
   content: '';
   position: absolute;
@@ -1977,6 +1982,167 @@ h5 {
 h6 {
   font-family: Georgia, serif;
   font-style: italic;
+}
+
+.cards {
+  display: grid;
+  width: 100%;
+  grid-template-columns:  1fr 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+}
+
+@media only screen and (min-width: 30em) {
+  .cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+  }
+}
+
+.cards div.image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cards div.image:before {
+  position: relative;
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.cards div.image > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cards div.image:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #FDDAC0;
+  mix-blend-mode: color;
+  top: 0;
+  cursor-events: none;
+}
+
+.cards div.image img {
+  -webkit-filter: grayscale();
+          filter: grayscale();
+}
+
+.cards div.image:hover img {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.cards div.image:hover:after {
+  display: none;
+}
+
+.cards h3:before {
+  display: none;
+}
+
+.position {
+  font-family: "MillerDisplay", Georgia, serif;
+  font-style: italic;
+  font-size: 1.41421rem;
+  line-height: 2.12132rem;
+}
+
+.bio {
+  margin-top: 1.5rem;
+}
+
+ul.links {
+  margin: 0;
+  padding: 0;
+  margin-left: 0;
+  list-style-type: none;
+}
+
+ul.links > * {
+  padding-left: 1.50001rem;
+  background-image: url(/assets/img/icons/link.svg);
+  background-repeat: no-repeat;
+  background-size: 0.75rem 0.75rem;
+  background-position: 0 0.375rem;
+}
+
+ul.links a {
+  text-decoration: underline;
+}
+
+ul.links a:hover {
+  color: #D95369;
+}
+
+/*
+   @file _clrs.sass
+   @description  Useful colour styles. */
+.clr--black {
+  color: #3F3730;
+}
+
+.clr--main {
+  color: #FDDAC0;
+}
+
+.clr--ms {
+  color: #8380E2;
+}
+
+.clr--1818 {
+  color: #FDB27B;
+}
+
+.clr--thomas {
+  color: #E378BF;
+}
+
+.clr--1823 {
+  color: #6FBCC0;
+}
+
+.clr--1831 {
+  color: #D95369;
+}
+
+.clr_bg--black {
+  background-color: #3F3730;
+}
+
+.clr_bg--main {
+  background-color: #FDDAC0;
+}
+
+.clr_bg--ms {
+  background-color: #8380E2;
+}
+
+.clr_bg--1818 {
+  background-color: #FDB27B;
+}
+
+.clr_bg--thomas {
+  background-color: #E378BF;
+}
+
+.clr_bg--1823 {
+  background-color: #6FBCC0;
+}
+
+.clr_bg--1831 {
+  background-color: #D95369;
 }
 
 /*
@@ -2675,6 +2841,13 @@ label.bold-choose {
 
 .next:disabled {
   background: url("/assets/img/viewer/next_btn_inactive.svg") no-repeat;
+}
+
+@media only screen and (min-width: 46.25em) {
+  #biographies {
+    width: 80%;
+    margin: 2.12132rem auto;
+  }
 }
 
 /*

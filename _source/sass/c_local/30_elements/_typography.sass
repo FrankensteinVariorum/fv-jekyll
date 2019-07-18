@@ -20,7 +20,7 @@ main
   > p, h1, h2, h3, h4, h5, h6
     max-width: $legible_inset_width
     line-height: inherit
-
+        
 .fontfamily-base
   font-family: $basefont
 
@@ -42,10 +42,10 @@ h2
   
 main
   h2
-    position: relative
     border-bottom: 2px solid $black
     padding-bottom: rv(1)
     margin: rv(3) auto rv(1) auto
+    position: relative
     
     &:after
       content: ''
@@ -58,6 +58,13 @@ main
       right: $h2_ornament_width * -0.5
       border-radius: $h2_ornament_width/2
       background-color: set-colour(1,'watermark')
+        
+  h1 + h2
+    border-bottom: 0
+    margin-bottom: 0
+    
+    &:after
+      display: none
   
 h3
   font-family: $altfont
@@ -65,7 +72,7 @@ h3
   font-weight: $semiboldfw
 
 main
-  h3
+  h3:nth-of-type(2n)
     position: relative
     
     &:before

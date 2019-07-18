@@ -10,7 +10,7 @@
     
     
 
-=image-bullets($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: $lineheight_factor)
+=image-bullets($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: 1)
   margin-left: 0
   list-style-type: none
   
@@ -18,7 +18,7 @@
     +set-image-bullet($bullet-icon, $width, $height, $padding, $lineheight)
     
   
-=set-image-bullet($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: $lineheight_factor)
+=set-image-bullet($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: 0)
 
   $bgleftpos: 0
   $bgtoppos: 0
@@ -33,7 +33,7 @@
   background-position: $bgleftpos $bgtoppos
   
   
-=set-negative-image-bullet($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: $lineheight_factor)
+=set-negative-image-bullet($bullet-icon, $width: 0, $height: 0, $padding: 0, $lineheight: 0)
   position: relative
   
   &:after
