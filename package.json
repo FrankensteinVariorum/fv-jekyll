@@ -1,7 +1,7 @@
 {
-	"name": "Frankenstein Variorum",
+	"name": "frankenstein_variorum_site",
 	"version": "0.0.1",
-	"description": "A digital variorum.",
+	"description": "A digital variorum edition of Mary Shelley’s Frankenstein.",
 	"main": "",
 	"author": {
 		"name": "Agile Humanities Agency | Bill Kennedy",
@@ -10,7 +10,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://agile.git.beanstalkapp.com/frankenstein-variorum.git"
+		"url": "https://github.com/PghFrankenstein/fv-jekyll.git"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.26.3",

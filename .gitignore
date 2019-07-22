@@ -4,7 +4,6 @@ _site
 vendor/
 
 .DS_Store
-/package-lock.json
 /node_modules
 /_site_local
 /assets
