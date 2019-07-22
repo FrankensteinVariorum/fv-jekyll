@@ -150,8 +150,8 @@ var cleanDist = function (done) {
 
 	// Clean the build folder
 	del.sync([
-		paths.output
-	]);
+		paths.output + "/*"
+	], {force: true});
 
 	// Signal completion
 	return done();
@@ -355,7 +355,7 @@ var copyFiles = function (done) {
 var copyViewerComponent = function (done) {
 	del.sync([
 		paths.viewerapp.mediaout
-	]);
+	],{force: true});
 	
 	var mediacopy = src(paths.viewerapp.mediain)
 		.pipe(dest(paths.viewerapp.mediaout));
@@ -369,7 +369,7 @@ var extractViewerScripts = function(done) {
   // Delete the viewer include
 	del.sync([
 		paths.viewerapp.scriptdest
-	]);
+	], {force: true});
   
   // Replace with body content of React component
   
