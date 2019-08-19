@@ -26,13 +26,13 @@ var paths = {
 	input: '_source',
 	output: 'assets',
 	viewerapp: {
-  	input: '_source/viewer/build/**/*',
-  	exclude: '!_source/viewer/build/index.html',
-  	output: 'viewer/',
-  	extract: '_source/viewer/build/index.html',
-  	scriptdest: '_includes/viewer/',
-  	mediain: '_source/viewer/build/static/media/**/*',
-  	mediaout: 'static/media/'
+		input: '_source/viewer/build/**/*',
+		exclude: '!_source/viewer/build/index.html',
+		output: 'viewer/',
+		extract: '_source/viewer/build/index.html',
+		scriptdest: '_includes/viewer/',
+		mediain: '_source/viewer/build/static/media/**/*',
+		mediaout: 'static/media/'
 	},
 	scripts: {
 		input: '_source/js/*',
@@ -69,9 +69,9 @@ var paths = {
 	},
 	reload: './_build/',
 	agiledev: {
-  	jekyll: {
-    	localbuildpath: '_site_local'
-    }
+		jekyll: {
+			localbuildpath: 'docs'
+		}
 	}
 };
 
@@ -104,7 +104,7 @@ var banner = {
  */
 
 // General
-var {gulp, src, dest, watch, series, parallel} = require('gulp');
+var { gulp, src, dest, watch, series, parallel } = require('gulp');
 var del = require('del');
 var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
@@ -136,7 +136,7 @@ var browserSync = require('browser-sync');
 // Child Process
 
 const cp = require("child_process");
- 
+
 
 /**
  * Gulp Tasks
@@ -151,7 +151,7 @@ var cleanDist = function (done) {
 	// Clean the build folder
 	del.sync([
 		paths.output + "/*"
-	], {force: true});
+	], { force: true });
 
 	// Signal completion
 	return done();
@@ -159,13 +159,13 @@ var cleanDist = function (done) {
 
 // Repeated JavaScript tasks
 var jsTasks = lazypipe()
-	.pipe(header, banner.full, {package: package})
+	.pipe(header, banner.full, { package: package })
 	.pipe(optimizejs)
 	.pipe(dest, paths.scripts.output)
-	.pipe(rename, {suffix: '.min'})
+	.pipe(rename, { suffix: '.min' })
 	.pipe(uglify)
 	.pipe(optimizejs)
-	.pipe(header, banner.min, {package: package})
+	.pipe(header, banner.min, { package: package })
 	.pipe(dest, paths.scripts.output);
 
 // Lint, minify, and concatenate scripts
@@ -176,7 +176,7 @@ var buildScripts = function (done) {
 
 	// Run tasks on script files
 	return src(paths.scripts.input)
-		.pipe(flatmap(function(stream, file) {
+		.pipe(flatmap(function (stream, file) {
 
 			// If the file is a directory
 			if (file.isDirectory()) {
@@ -244,15 +244,15 @@ var buildStyles = function (done) {
 			cascade: true,
 			remove: true
 		}))
-		.pipe(header(banner.full, { package : package }))
+		.pipe(header(banner.full, { package: package }))
 		.pipe(dest(paths.styles.output))
-		.pipe(rename({suffix: '.min'}))
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(minify({
 			discardComments: {
 				removeAll: true
 			}
 		}))
-		.pipe(header(banner.min, { package : package }))
+		.pipe(header(banner.min, { package: package }))
 		.pipe(dest(paths.styles.output));
 
 };
@@ -355,31 +355,31 @@ var copyFiles = function (done) {
 var copyViewerComponent = function (done) {
 	del.sync([
 		paths.viewerapp.mediaout
-	],{force: true});
-	
+	], { force: true });
+
 	var mediacopy = src(paths.viewerapp.mediain)
 		.pipe(dest(paths.viewerapp.mediaout));
 
-  
-	return src([paths.viewerapp.input,paths.viewerapp.exclude])
+
+	return src([paths.viewerapp.input, paths.viewerapp.exclude])
 		.pipe(dest(paths.viewerapp.output));
 }
 
-var extractViewerScripts = function(done) {
-  // Delete the viewer include
+var extractViewerScripts = function (done) {
+	// Delete the viewer include
 	del.sync([
 		paths.viewerapp.scriptdest
-	], {force: true});
-  
-  // Replace with body content of React component
-  
+	], { force: true });
+
+	// Replace with body content of React component
+
 	return src(paths.viewerapp.extract)
 		.pipe(extractText({
-      pattern_start: "<body>", 
-      pattern_end: "</body>"
-    }))
-    .pipe(replace(/\/static\/js/g,'/viewer/static/js'))
-    .pipe(dest(paths.viewerapp.scriptdest));
+			pattern_start: "<body>",
+			pattern_end: "</body>"
+		}))
+		.pipe(replace(/\/static\/js/g, '/viewer/static/js'))
+		.pipe(dest(paths.viewerapp.scriptdest));
 }
 
 
@@ -387,12 +387,12 @@ var extractViewerScripts = function(done) {
 
 // Jekyll
 function jekyll() {
-  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+	return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
 }
 
 // Jekyll FV Local
 function jekyllLocal() {
-  return cp.spawn("bundle", ["exec", "jekyll", "build","-d" + paths.agiledev.jekyll.localbuildpath], { stdio: "inherit" });
+	return cp.spawn("bundle", ["exec", "jekyll", "build", "-d" + paths.agiledev.jekyll.localbuildpath], { stdio: "inherit" });
 }
 
 
@@ -462,13 +462,13 @@ exports.default = series(
 );
 
 exports.buildViewer = series(
-  copyViewerComponent,
-  extractViewerScripts
+	copyViewerComponent,
+	extractViewerScripts
 );
 
 exports.build = series(
-  exports.default,
-  jekyll
+	exports.default,
+	jekyll
 );
 
 exports.buildLocal = series(
@@ -495,7 +495,7 @@ exports.watch = series(
 );
 
 exports.watchLocal = series(
-  exports.default,
-  jekyllLocal,
-  watchLocalSrc
+	exports.default,
+	jekyllLocal,
+	watchLocalSrc
 )
