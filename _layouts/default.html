@@ -1,6 +1,3 @@
----
-layout: compress
----
 <html lang="{{ page.lang | default: site.lang | default: "en_US" }}">
   {% include head.html page=page %}
   <body>
@@ -24,7 +21,7 @@ layout: compress
           <a name="secondary-content" tabindex="0"></a>
           <div class='content-column{% if page.secondary_sidebar %} with-sidebar{% endif %}'>
             {{ page.secondary_content }}
-      
+
             {% if page.secondary_sidebar %}
               <aside role="complementary">
                 {{ page.secondary_sidebar }}
@@ -38,7 +35,7 @@ layout: compress
           <a name="tertiary-content" tabindex="0"></a>
           <div class='content-column{% if page.tertiary_sidebar %} with-sidebar{% endif %}'>
             {{ page.tertiary_content }}
-      
+
             {% if page.tertiary_sidebar %}
               <aside role="complementary">
                 {{ page.tertiary_sidebar }}
