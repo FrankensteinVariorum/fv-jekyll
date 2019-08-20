@@ -21,13 +21,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "fv-jekyll" # the subpath of your site, e.g. /blog
 url: "https://pghfrankenstein.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
 github_username: PghFrankenstein
+
 
 # Build settings
 markdown: kramdown
 plugins:
 encoding: utf-8
+destination: docs
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -43,6 +44,4 @@ exclude:
   - gulpfile.js
   - package.json
   - package-lock.json
-
-compress_html:
-  clippings: all
+  - docs

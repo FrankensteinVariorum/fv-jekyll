@@ -67,12 +67,7 @@ var paths = {
 		input: '_source/copy/**/*',
 		output: 'assets/'
 	},
-	reload: './_build/',
-	agiledev: {
-		jekyll: {
-			localbuildpath: 'docs'
-		}
-	}
+	reload: './_build/'
 };
 
 
@@ -387,15 +382,13 @@ var extractViewerScripts = function (done) {
 
 // Jekyll
 function jekyll() {
-	return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+	return cp.spawn("bundle", ["exec", "jekyll", "build", "--config", "_config.yml"], { stdio: "inherit" });
 }
 
 // Jekyll FV Local
 function jekyllLocal() {
-	return cp.spawn("bundle", ["exec", "jekyll", "build", "-d" + paths.agiledev.jekyll.localbuildpath], { stdio: "inherit" });
+	return cp.spawn("bundle", ["exec", "jekyll", "build", "--config", "_config.yml,_local_config.yml"], { stdio: "inherit" });
 }
-
-
 
 // Watch for changes to the source directory
 var startServer = function (done) {
