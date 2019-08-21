@@ -8,13 +8,10 @@
         {% if page.title %}
           <h1>{{page.title}}</h1>
         {% endif %}
-        {{ page.content | markdownify }}
+        {{ content }}
       </main>
       {% if page.categories contains 'viewer' %}
         {% include viewer/index.html %}
-      {% endif %}
-      {% if page.biographies == 1 %}
-        {% include biographies.html %}
       {% endif %}
       {% if page.secondary_content or page.secondary_sidebar %}
         <section id="secondary-content" class='region'>
