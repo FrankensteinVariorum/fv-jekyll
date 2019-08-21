@@ -1,27 +1,27 @@
 <div id="biographies" class='cards'>
-  {% for bio in site.data.biographies %}  
-    <div class='card'>
-      {% if bio.image %}
-        <div class='image'>
-          <img src='{{ bio.image.src }}' alt='{{ bio.image.alt }}' />
-        </div>
-      {% endif %}
-      <h3>{{bio.name}}</h3>
-      {% if bio.position %}
-        <div class='position'>{{ bio.position }}</div>
-      {% endif %}
-      {% if bio.bio %}
-        <div class='bio'>
-          {{ bio.bio }}
-        </div>
-      {% endif %}
-      {% if bio.links %}
-        <ul class='links'>
-        {% for link in bio.links %}
-          <li><a href='{{ link.link }}' title='{{ link.title }}'>{{ link.title }}</a></li>
-        {% endfor %}
-        </ul>
-      {% endif %}     
-    </div> 
+  {% for bio in site.data.biographies %}
+  <div class='card'>
+    {% if bio.image %}
+    <div class='image'>
+      <img src='{{ bio.image.src | relative_url }}' alt='{{ bio.image.alt }}' />
+    </div>
+    {% endif %}
+    <h3>{{bio.name}}</h3>
+    {% if bio.position %}
+    <div class='position'>{{ bio.position }}</div>
+    {% endif %}
+    {% if bio.bio %}
+    <div class='bio'>
+      {{ bio.bio }}
+    </div>
+    {% endif %}
+    {% if bio.links %}
+    <ul class='links'>
+      {% for link in bio.links %}
+      <li><a href='{{ link.link }}' title='{{ link.title }}'>{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
   {% endfor %}
 </div>

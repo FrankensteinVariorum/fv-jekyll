@@ -1,0 +1,31 @@
+---
+---
+<html class='home' lang="{{ page.lang | default: site.lang | default: "en_US" }}">
+  {% include head.html page=page %}
+  <body class='home'>
+    {% include header.html page=page %}
+    <div id='content-area'>
+      <section>
+        <div id='epigraph'>
+          Did I request thee, Maker from my clay<br />
+          To mould me man ?  Did I solicit thee<br />
+          From darkness to promote me? — <span class='epigraph-source'>PARADISE LOST</span>
+        </div>
+        <div id='home-title'>
+          <div class='attribution'>Mary Shelley’s</div>
+          <h1>Frankenstein</h1>
+          <div class='subtitle'>A Digital Variorum Edition</div>
+        </div>
+        <div id='home-cta' class='btn'>
+          <a href="{{ '/viewer' | relative_url }}" title='Use the Variorum Viewer'>Variorum Viewer</a>
+        </div>
+      </section>
+      <aside id='fronticepiece'>
+        <img src='/assets/img/general/fronticepiece-50.jpg' alt='Fronticepiece Image' />
+      </aside>
+
+    </div>
+  </body>
+  {% include footer.html page=page %}
+  {% include endjs.html %}
+</html>
