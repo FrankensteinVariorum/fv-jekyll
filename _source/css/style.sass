@@ -1,0 +1,21 @@
+---
+---
+
+/* Core Styles for this application */
+
+$base_url: "{{ site.baseurl }}"
+
+// Load configuration files
+@import 'a_core/00_libraries/_index.sass'
+@import '_00_configuration.sass'
+@import 'a_core/00_configuration/_index.sass'
+@import 'c_local/00_configuration/_index.sass'
+
+// Load core styles
+@import 'a_core/_index.sass'
+
+// Load application-specific styles
+@import 'b_application/drupal_7/_index.sass'
+
+// Load local styles
+@import 'c_local/_index.sass'

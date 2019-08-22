@@ -26,7 +26,6 @@ github_username: PghFrankenstein
 
 # Build settings
 markdown: kramdown
-plugins:
 encoding: utf-8
 destination: docs
 

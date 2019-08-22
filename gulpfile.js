@@ -40,7 +40,7 @@ var paths = {
 		output: 'assets/js/'
 	},
 	styles: {
-		input: '_source/sass/**/*.{scss,sass}',
+		input: '_source/css/**/*.{scss,sass}',
 		output: 'assets/css/'
 	},
 	imgs: {
@@ -230,26 +230,7 @@ var buildStyles = function (done) {
 
 	// Run tasks on all Sass files
 	return src(paths.styles.input)
-		.pipe(sass({
-			outputStyle: 'expanded',
-			srcComments: true
-		}))
-		.pipe(prefix({
-			browsers: ['last 2 version', '> 0.25%'],
-			cascade: true,
-			remove: true
-		}))
-		.pipe(header(banner.full, { package: package }))
-		.pipe(dest(paths.styles.output))
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(minify({
-			discardComments: {
-				removeAll: true
-			}
-		}))
-		.pipe(header(banner.min, { package: package }))
 		.pipe(dest(paths.styles.output));
-
 };
 
 

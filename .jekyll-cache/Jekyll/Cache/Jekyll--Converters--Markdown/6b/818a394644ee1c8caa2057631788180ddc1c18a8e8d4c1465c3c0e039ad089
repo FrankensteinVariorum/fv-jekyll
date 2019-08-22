@@ -1,32 +1,4 @@
-<html lang="en_US">
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <!-- stylesheets -->
-  <link rel='stylesheet' type='text/css' href="/fv-jekyll/assets/css/style.css" />
-  
-</head>
-
-  <body>
-    <header>
-  <nav>
-    <a href="/fv-jekyll/">Home</a>
-    <a href="/fv-jekyll/viewer">Variorum Viewer</a>
-    <a href="/fv-jekyll/about">About</a>
-    <a href="/fv-jekyll/method">Method</a>
-    <a href="/fv-jekyll/people">People</a>
-  </nav>
-</header>
-
-    <div id='content-area'>
-      <section id="wayfinding" role="navigation"></section>
-      <main id="primary-content" role="main">
-        
-          <h1>About</h1>
-        
-        <h2 id="header-2">Header 2</h2>
+I"Þ<h2 id="header-2">Header 2</h2>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rutrum lorem, in dictum velit vehicula vitae. Proin eget elementum lectus. Proin malesuada tortor eget felis accumsan convallis. Sed vehicula, nibh lacinia aliquam gravida, turpis nunc ullamcorper nibh, nec molestie libero est et augue. Integer gravida est ac enim rhoncus, et iaculis metus mattis. Integer luctus quam orci, id convallis sem lacinia eu. Aenean nisi ante, molestie sit amet placerat id, bibendum a nisl. Vestibulum lacus libero, iaculis interdum fringilla quis, sollicitudin eu dui. Duis tempus ut mauris eu pulvinar. Praesent vestibulum molestie metus id laoreet. In sit amet leo a ex vestibulum placerat. Pellentesque quis enim eget felis accumsan porttitor. Aliquam erat volutpat. Duis sit amet erat lobortis augue ultricies venenatis.</p>
 
@@ -51,30 +23,4 @@
 <h6 id="header-6">Header 6</h6>
 
 <p>Nullam vel fermentum ligula, sit amet vehicula leo. Aliquam ac odio viverra nulla venenatis placerat quis at elit. Sed et porta dui. Suspendisse nec augue lobortis, interdum ex vitae, sagittis dui. Nam tellus mi, feugiat sit amet pharetra ac, consectetur sit amet enim. Ut ipsum ipsum, vulputate id lacinia vitae, porttitor ac lacus. Vestibulum dapibus massa eget augue ullamcorper dignissim. Quisque ultricies dignissim elementum. Nulla viverra finibus nunc, et bibendum magna efficitur a. Aenean elementum leo a ullamcorper tristique. Nam vehicula semper lacus, eget volutpat ipsum commodo at. Donec et fermentum metus. Fusce ultricies risus mauris, sed condimentum turpis faucibus non. Curabitur vitae rutrum tellus, eget porttitor justo. Mauris auctor ornare efficitur. Sed ut orci non elit efficitur bibendum vel at lectus.</p>
-
-      </main>
-      
-    </div>
-  </body>
-  <footer>
-  <div>
-    <div id='footer-identity'></div>
-    <div id='footer-content'>
-      <nav>
-        <a href='/'>Footer</a>
-        <a href='/'>Links</a>
-        <a href='/'>To</a>
-        <a href='/'>Come</a>
-      </nav>
-      <div id='colophon'>
-        <p>@ Copyright Statement</p>
-        <p>Lorem Ipsum dolor sit amet consectetuer adipscing elit, sed diam nonummy nibh.</p>
-      </div>
-    </div>
-    <div id='footer-sponsors'></div>
-  </div>
-</footer>
-  <!-- <script src="/fv-jekyll/assets/js/default.min.js"></script> -->
-
-
-</html>
+:ET
