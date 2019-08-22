@@ -44,3 +44,4 @@ exclude:
   - package.json
   - package-lock.json
   - docs
+  - README.md
