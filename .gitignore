@@ -8,3 +8,4 @@ _site
 /_site_local
 /assets
 /static
+.jekyll-cache
