@@ -209,7 +209,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "91d6f78c42ad2b6803674f25cd9fde95",
-    "url": "/static/media/intensity_legend.91d6f78c.svg"
+    "url": "/fv-jekyll/static/media/intensity_legend.91d6f78c.svg"
   },
   {
     "revision": "60b3d61bf078cf331c491a2310574e90",
