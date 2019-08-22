@@ -1,3 +1,5 @@
+---
+---
 {
   "short_name": "React App",
   "name": "Create React App Sample",
@@ -8,7 +10,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "{{ site.baseurl }}",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
