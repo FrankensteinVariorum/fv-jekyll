@@ -1,6 +1,5 @@
 ---
-layout: default
+layout: viewer
 title: Variorum Viewer
 permalink: /viewer/
-categories: ['viewer']
 ---

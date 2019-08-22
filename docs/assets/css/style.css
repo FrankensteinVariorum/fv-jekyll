@@ -461,7 +461,7 @@ body > header nav a:last-child { margin-right: 0; }
 /* !FOOTER CODE */
 body > footer { width: 100%; background-color: #3F3730; color: #FFFFFF; font-family: "ITCFranklinGothic", Helvetica, Arial, sans-serif; font-size: 0.7071085624rem; border-top: 3px solid #FFFFFF; z-index: 10; margin-top: 4.2426086258rem; padding: 4.2426086258rem 2.121315rem; position: relative; bottom: initial; z-index: 0; text-align: center; }
 
-body > footer:before { z-index: 1; content: ''; height: 4.2426086258rem; width: 4.2426086258rem; top: -2.1213043129rem; margin-left: -2.1213043129rem; position: absolute; background-repeat: no-repeat; background-image: url(/fv-jekyll/assets/img/logo/fv-mark-reverse.svg); }
+body > footer:before { z-index: 1; content: ''; height: 4.2426086258rem; width: 4.2426086258rem; top: -2.1213043129rem; margin-left: -2.1213043129rem; position: absolute; background-repeat: no-repeat; background-image: url("/fv-jekyll/assets/img/logo/fv-mark-reverse.svg"); }
 
 body > footer > div { width: 100%; margin: 0 auto; padding-left: 1.0606628436rem; padding-right: 1.0606628436rem; display: grid; grid-auto-flow: dense; grid-template-columns: 1fr; grid-gap: 2.121315rem; }
 
