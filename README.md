@@ -18,13 +18,13 @@ npm install
 
 Once dependencies are downloaded, the build is managed via gulp.
 
-+ gulp build – Full deployment. Runs SASS files, js minimizer, copies images, processes the React component, builds Jekyll (via bundle exec) and outputs the static to the `docs/` folder, which will be served by GitHub pages.
++ `gulp build` – Full deployment. Runs SASS files, js minimizer, copies images, processes the React component, builds Jekyll (via bundle exec) and outputs the static to the `docs/` folder, which will be served by GitHub pages. **Afer running `gulp build`, you must commit all changed files from the `docs/` folder and then push those commits to GitHub.**
 
-+ gulp buildLocal – As above, but outputs to the `_site/` folder instead. Good for testing everything but output destination.
++ `gulp buildLocal` – As above, but outputs to the `_site/` folder instead. Good for testing everything but output destination.
 
-+ gulp watch – Looks for any changes to the Sass or JS files and builds automatically.
++ `gulp watch` – Looks for any changes to the Sass or JS files and builds automatically.
 
-+ gulp watchLocal – As above, but builds to local `_site/` folder.
++ `gulp watchLocal` – As above, but builds to local `_site/` folder.
 
 + All supporting assets should be placed in the `_source/` folder. They will be output to `assets/` on build.
 
