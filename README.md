@@ -2,7 +2,7 @@
 
 Building this project requires:
 
-- ruby >=2.5.3
+- ruby >=2.5.3 (Strongly suggest installing via [rbenv](https://github.com/rbenv/rbenv))
 - bundler (ruby gem)
 - nodejs >= 10.16.3
 - gulp >= 2.0.2
@@ -17,7 +17,6 @@ npm install
 ## Building
 
 Once dependencies are downloaded, the build is managed via gulp.
-
 
 + gulp build – Full deployment. Runs SASS files, js minimizer, copies images, processes the React component, builds Jekyll (via bundle exec) and outputs the static to the `docs/` folder, which will be served by GitHub pages.
 
@@ -34,6 +33,12 @@ Once dependencies are downloaded, the build is managed via gulp.
 + The React component lives in `_source/viewer/build`. To update the app you need to drop a fully compiled React build here and run `gulp build`.
 
 + **IMPORTANT**: If the app changes you will have to run the React build elsewhere before deployment. The FV production site is currently not configured to build React components.
+
+## URL configuration
+
+The _config.yml file currently sets the base url of the site as `/fv-jekyll`, which corresponds to the path offered by GitHub pages.
+
+To redeploy this site with a different base url, you must edit that attribute in configuration and do a full rebuild, as it affects not only the HTML components but also paths referenced by SCSS and JS files.
 
 ## Changing site content & static (non-React) assets
 
@@ -57,7 +62,7 @@ Once dependencies are downloaded, the build is managed via gulp.
 
 ### SASS
 
-+ The FV site uses a custom SASS library, located at `_source/sass/`
++ The FV site uses a custom SASS library, located at `_sass/`
 
 + IMPORTANT: Do NOT change CSS styles in the `assets/css/` folder. The build process overwrites everything in that folder.
 
@@ -65,6 +70,6 @@ Once dependencies are downloaded, the build is managed via gulp.
 
 + The SASS library is built on a configuration-driven design system developed at Agile Humanities. There are some functions and mixins that may not be transparent in their usage. Ask Agile for guidance if necessary.
 
-+ Only change the SASS partials in `source/sass/c_local/**` . If you need to change styles that are sourced to files in `source/sass/a_core/**` it's best to override them in a c_local subdirectory SASS file.
++ Only change the SASS partials in `_sass/c_local/**` . If you need to change styles that are sourced to files in `_sass/a_core/**` it's best to override them in a c_local subdirectory SASS file.
 
-+ General typography can be tweaked in `source/sass/c_local/30_elements/_typography.sass`
++ General typography can be tweaked in `_sass/c_local/30_elements/_typography.sass`
