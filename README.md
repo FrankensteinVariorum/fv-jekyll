@@ -26,6 +26,8 @@ Once dependencies are downloaded, the build is managed via gulp.
 
 + `gulp watchLocal` – As above, but builds to local `_site/` folder.
 
++ To preview the Jekyll site after building, run `bundle exec jekyll serve --watch --config _config.yml,_local_config.yml`
+
 + All supporting assets should be placed in the `_source/` folder. They will be output to `assets/` on build.
 
 + The FV-React App has its own repo, located at <https://github.com/PghFrankenstein/fv-website>
