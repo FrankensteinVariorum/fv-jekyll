@@ -509,7 +509,7 @@ main { line-height: 2.25rem; }
 
 main > * { margin-left: auto; margin-right: auto; }
 
-main > p, main h1, main h2, main h3, main h4, main h5, main h6 { max-width: 750px; line-height: inherit; }
+main > p, main h1, main h2, main h3, main h4, main h5, main h6, main ul, main ol, main li { max-width: 750px; line-height: inherit; }
 
 .fontfamily-base { font-family: Georgia, serif; }
 

@@ -5,6 +5,9 @@
   <title>{{ title }}{% if page.pagetitle %} | {{ page.pagetitle }}{% endif %}</title>
   <!-- stylesheets -->
   <link rel='stylesheet' type='text/css' href="{{ '/assets/css/style.css' | relative_url }}" />
+  <!-- favicon though they are not working yet 09-17-2019 -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="icon" type="image/ico" href="favicon.ico"/>
   {% if page.categories contains 'viewer' %}
   <!-- Load viewer head tags -->
   {% endif %}

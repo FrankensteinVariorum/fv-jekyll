@@ -5,48 +5,49 @@ h1
   padding-bottom: rv(3)
   margin-bottom: rv(3)
   border-bottom: 4px double $black
-  
-  
+
+
   +bp(med)
     width: 70%
 
 main
   line-height: $blh * 1.5
-  
+
   > *
     margin-left: auto
     margin-right: auto
 
-  > p, h1, h2, h3, h4, h5, h6
+  > p, h1, h2, h3, h4, h5, h6, ul, ol, li 
     max-width: $legible_inset_width
     line-height: inherit
-        
+
+
 .fontfamily-base
   font-family: $basefont
 
 .fontfamily-heading
   font-family: $headingfont
-  
+
 .fontfamily-alt
   font-family: $altfont
-  
-  
+
+
 $h2_ornament_width: 300px
 $h3_ornament_width: 200px
-  
+
 
 h2
   font-style: italic
   width: 100%
   text-align: center
-  
+
 main
   h2
     border-bottom: 2px solid $black
     padding-bottom: rv(1)
     margin: rv(3) auto rv(1) auto
     position: relative
-    
+
     &:after
       content: ''
       z-index: -1
@@ -58,14 +59,14 @@ main
       right: $h2_ornament_width * -0.5
       border-radius: $h2_ornament_width/2
       background-color: set-colour(1,'watermark')
-        
+
   h1 + h2
     border-bottom: 0
     margin-bottom: 0
-    
+
     &:after
       display: none
-  
+
 h3
   font-family: $altfont
   text-transform: uppercase
@@ -74,7 +75,7 @@ h3
 main
   h3:nth-of-type(2n)
     position: relative
-    
+
     &:before
       z-index: -1
       content: ''
@@ -86,7 +87,7 @@ main
       left: $h3_ornament_width * -0.5
       border-radius: $h3_ornament_width/2
       background-color: set-colour(1,'watermark')
-  
+
 h4
   font-family: $altfont
   font-weight: $normalfw
@@ -95,7 +96,7 @@ h5
   font-family: $basefont
   font-weight: $boldfw
   text-transform: uppercase
-  
+
 h6
   font-family: $basefont
   font-style: italic
