@@ -17,9 +17,9 @@ title: Frankenstein Variorum
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   The Frankenstain Variorum is a digital variorum edition of the novel Frankenstein.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://frankensteinvariorum.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: FrankensteinVariorum
+baseurl: "/fv-jekyll" # the subpath of your site, e.g. /blog
+url: "https://pghfrankenstein.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: PghFrankenstein
 
 
 # Build settings
