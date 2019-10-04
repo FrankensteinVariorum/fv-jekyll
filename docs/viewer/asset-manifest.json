@@ -11,7 +11,7 @@
     "precache-manifest.f2a3fbe221021773cf80490ea1a61767.js": "/precache-manifest.f2a3fbe221021773cf80490ea1a61767.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.28e6ab26.chunk.css.map": "/static/css/main.28e6ab26.chunk.css.map",
-    "static/media/style.sass": "/fv-jekyll/static/media/prev_btn_over.3e9b40a8.svg",
-    "static/media/intensity_legend.svg": "/fv-jekyll/static/media/intensity_legend.91d6f78c.svg"
+    "static/media/style.sass": "/viewer/static/media/prev_btn_over.3e9b40a8.svg",
+    "static/media/intensity_legend.svg": "/viewer/static/media/intensity_legend.91d6f78c.svg"
   }
 }
