@@ -4,41 +4,42 @@ title: People
 permalink: /people/
 ---
 
-Fittingly, this project began in November 2017, when we came together to discuss our shared awareness of the *Frankenstein* bicentennial and doing some work with the text. Scott Weingart pulled together a meeting in which we discussed how we might peform a digital collation, consider text analysis, and other opportunities. Our inital project began with Elisa Beshero-Bondar and Raffaele Viglianti looking at what could be used for collation, Matthew Lavin of the University of Pittsburgh and Scott looking at text analysis possibilities, Jon Klancher as a Romantacist was interested in online possibilities for annotations, and Rikk Mulligan in full text versions for analysis and the UI to make these accessible.
+Fittingly, this project began in November 2017, when we came together to discuss our shared awareness of the *Frankenstein* bicentennial and doing some work with the text. Scott B. Weingart pulled together a meeting in which we discussed how we might peform a digital collation, consider text analysis, and other opportunities. Our inital project began with Elisa Beshero-Bondar and Raffaele Viglianti looking at what could be used for collation, Matthew Lavin of the University of Pittsburgh and Scott looking at text analysis possibilities, Jon Klancher as a Romantacist was interested in online possibilities for annotations, and Rikk Mulligan in full text versions for analysis and the UI to make these accessible.
 
-The scope of the project has shifted, with new pieces patched on and others cut and stitched as needed. Some of our original group had to shift their attention elsewhere, and with the aid of a Andrew W. Mellon Digital Humanities Seed Grant provided through the Dietrich College of Humanities and Social Sciences, we had the resources to bring on graduate student collaborators for the annotation efforts. We also experimented with a GIS visualization component to the site.
+The scope of the project has shifted, with new pieces patched on and others cut and stitched as needed. Some of our original group had to shift their attention elsewhere, and with the aid of an Andrew W. Mellon Digital Humanities Seed Grant provided through the Dietrich College of Humanities and Social Sciences, we had the resources to bring on graduate student collaborators for the annotation efforts. We also experimented with a GIS visualization component to the site.
 
-Our work continues, with those focused on specific portions of the effort listed below:
+Our work continues, with those focused on specific portions of the effort listed below. Within each list, author order is alphabetical.
 
 
-#### Textual Editing, TEI, Variorum Interface
+#### Textual Editing and TEI
 
 - Elisa Beshero-Bondar (Pitt-Greensburg)
-- Raffaele Viglianti (MITH, Univ Maryland)
 - Rikk Mulligan (Carnegie Mellon)
+- Raffaele Viglianti (MITH, Univ Maryland)
 
+#### Variorum / Project Interface
+
+- Elisa Beshero-Bondar (Pitt-Greensburg)
+- Matt Lincoln (Carnegie Mellon)
+- Rikk Mulligan (Carnegie Mellon)
+- Raffaele Viglianti (MITH, Univ Maryland)
+- Scott B. Weingart (Carnegie Mellon)
+- Agile Humanities Agency
 
 #### Contextual Annotations
 
-- Jon Klancher (Carnegie Mellon)
 - Steven Gotzler (Carnegie Mellon)
+- Jon Klancher (Carnegie Mellon)
 - Jack Quirk (Brown University)
 - Avery Wiscomb (Carnegie Mellon)
 
 #### GIS and Data Visualization
 
-- Emma Slayton (Carnegie Mellon)
-- Jack Quirk  (Brown University)
-- Avery Wiscomb (Carnegie Mellon)
 - Matthew Lincoln  (Carnegie Mellon)
-
-
-#### Project Interface
-
-- Rikk Mulligan (Carnegie Mellon)
-- Elisa Beshero-Bondar (Pitt-Greensburg)
-- Raffaele Viglianti (MITH, Univ Maryland)
-- Scott Weingart (Carnegie Mellon)
+- Jack Quirk  (Brown University)
+- Emma Slayton (Carnegie Mellon)
+- Scott B. Weingart (Carnegie Mellon)
+- Avery Wiscomb (Carnegie Mellon)
 
 
 **Agile Humanities Agency**
