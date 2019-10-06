@@ -19,7 +19,7 @@ The following are distinct editions prepared “under the hood” by correcting 
 
 1. [1818 publication of Frankenstein](https://ebeshero.github.io/Pittsburgh_Frankenstein/Frankenstein_1818.html).
 * [Pitt-Greensburg classroom edition of the 1818 text](https://ebeshero.github.io/Pittsburgh_Frankenstein/Frankenstein_1818_classEd.html) (a copy of the same) for use in annotation assignments.
-2. [The Thomas copy](https://https:/frankensteinvariorum.github.io/fv-collation/Frankenstein_Thom.html), an edition representing Mary Shelley’s edits handwritten on an 1818 edition of the novel.
+2. [The Thomas copy](https://frankensteinvariorum.github.io/fv-collation/Frankenstein_Thom.html), an edition representing Mary Shelley’s edits handwritten on an 1818 edition of the novel.
 
 3. [1823 publication of Frankenstein](https://ebeshero.github.io/Pittsburgh_Frankenstein/Frankenstein_1823.html) (supervised by William Godwin).
 
