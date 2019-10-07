@@ -1,3 +1,11 @@
+**THIS SITE IS NOT A CONVENTIONAL GITHUB-PAGES / JEKYLL SITE - PLEASE READ BELOW BEFORE EDITING**
+
+This site requires a Gulp-based build step prior to running the Jekyll build. This means that GitHub is not able to build the site for us from source automatically. Instead, one needs to run the build process (it requires nodejs and gulp) on your own machine. This will update the rendered HTML in the /docs folder, and then GitHub serves that HTML. Therefore, you must commit both the changes to the markdown source as well as the changes to the built HTML and push those to GitHub. 
+
+**Do not edit the /docs files by hand – they are wiped and regenerated every time the gulp/Jekyll build processes the source markdown.**
+
+Edit the markdown files as normal; if you need to build the site locally, read on:
+
 ## Installation
 
 Building this project requires:
