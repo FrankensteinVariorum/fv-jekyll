@@ -9,3 +9,5 @@ _site
 /assets
 /static
 .jekyll-cache
+viewer/
+_includes/viewer/
