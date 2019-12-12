@@ -1,0 +1,16 @@
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}code{font-family:source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace}.App{margin:25px}.App-header{background-color:#282c34;min-height:10vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:calc(10px + 2vmin);color:#fff}.App-link{color:#61dafb}.fontfamily-base{font-family:Georgia,serif}.fontfamily-heading{font-family:MillerDisplay,Georgia,serif}.fontfamily-alt{font-family:ITCFranklinGothic,Helvetica,Arial,sans-serif}.dot{height:8px;width:8px;border-radius:50%;display:inline-block;background-color:grey;margin-right:10px}.dot-break{opacity:0}.select-style{width:200px}.ed-1818{background-color:#fdb27b}.ed-1823{background-color:#6fbcc0}.ed-1831{background-color:#e378bf}.ed-Thomas{background-color:#98c99f}.ed-MS{background-color:#8380e2}button{cursor:pointer}.disable-button{opacity:.65;cursor:not-allowed}.right{float:right;display:inline-block}.center{text-align:center}.row{display:flex;justify-content:space-around}.in-row{display:inline-block}.margin-button{margin-left:20px}.options-label{display:block}.edition-label{margin-right:20px}.tei-del .tei-cdata{text-decoration:line-through}.in-line{display:inline-block}.paging-buttons{margin-left:25px}.tei-cdata{line-height:40px}.tei-cdata.no-text{opacity:0}.tei-cdata.tei-del{text-decoration:line-through}.app-intensity-0{background-color:#f0f0f0}.app-intensity-1{background-color:silver}.app-intensity-2{background-color:#a0a0a0}.app-intensity-3{background-color:grey}.reading-group-content div,.tei-container div{display:inline}.app-wrapper{position:relative}.app-wrapper-dots{width:200px;position:absolute;top:0;left:0;margin-top:18px}
+/* !APPLICATION */
+/* !CORE VALUES */
+/* !COLOUR GRID */
+/* !BREAKPOINTS */
+/* !TYPOGRAPHY */
+/* !UI STANDARDIZATION */
+/* !IMAGE PATHS */#viewer>*{margin-bottom:rv(0)}#viewer>:last-child{margin-bottom:0}#viewer__controls{display:grid;grid-template-columns:2fr 4fr 2fr;grid-gap:rv(0)}#viewer__controls>*{background-color:#f3f3f3;padding-top:rv(-1);padding-bottom:rv(-1)}#viewer_pagination_controls{display:grid;grid-template-columns:1fr 2fr 2fr;grid-gap:rv(0)}#viewer_pagination_controls>*{background-color:#f3f3f3;padding-top:rv(-1);padding-bottom:rv(-1)}.viewer__cols{display:grid;grid-template-columns:2fr 4fr 2fr;grid-gap:rv(0)}.viewer__cols>*{background-color:#f3f3f3;padding-top:rv(-1);padding-bottom:rv(-1)}#viewer__marginalia{display:flex;height:100%;flex-direction:column;align-items:flex-start;justify-content:space-between;align-content:center;padding:rv(-1) 0}.viewer__zone{height:33.333%;display:flex;align-items:center}.line{border-top:6px solid;background-color:#f3f3f3}
+/* !APPLICATION */
+/* !CORE VALUES */
+/* !COLOUR GRID */
+/* !BREAKPOINTS */
+/* !TYPOGRAPHY */
+/* !UI STANDARDIZATION */
+/* !IMAGE PATHS */
+/*# sourceMappingURL=main.16905b4a.chunk.css.map */

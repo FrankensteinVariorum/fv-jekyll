@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/viewer/viewer/static/css/main.652f23fc.chunk.css",
-    "main.js": "/viewer/viewer/static/js/main.defaff50.chunk.js",
-    "main.js.map": "/viewer/viewer/static/js/main.defaff50.chunk.js.map",
-    "runtime~main.js": "/viewer/viewer/static/js/runtime~main.774c36ef.js",
-    "runtime~main.js.map": "/viewer/viewer/static/js/runtime~main.774c36ef.js.map",
-    "static/js/2.0d65af9a.chunk.js": "/viewer/viewer/static/js/2.0d65af9a.chunk.js",
-    "static/js/2.0d65af9a.chunk.js.map": "/viewer/viewer/static/js/2.0d65af9a.chunk.js.map",
-    "index.html": "/viewer/viewer/index.html",
-    "precache-manifest.01b414d472500407cab15e8c4a98e847.js": "/viewer/viewer/precache-manifest.01b414d472500407cab15e8c4a98e847.js",
-    "service-worker.js": "/viewer/viewer/service-worker.js",
-    "static/css/main.652f23fc.chunk.css.map": "/viewer/viewer/static/css/main.652f23fc.chunk.css.map",
-    "static/media/style.sass": "/viewer/viewer/static/media/prev_btn_over.3e9b40a8.svg",
-    "static/media/intensity_legend.svg": "/viewer/viewer/static/media/intensity_legend.91d6f78c.svg",
-    "static/media/manicule.svg": "/viewer/viewer/static/media/manicule.15158cdd.svg",
-    "static/media/sgalogo.png": "/viewer/viewer/static/media/sgalogo.151f80c9.png"
+    "main.css": "/static/css/main.28e6ab26.chunk.css",
+    "main.js": "/static/js/main.3540ca17.chunk.js",
+    "main.js.map": "/static/js/main.3540ca17.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.2ae3c8fe.chunk.js": "/static/js/2.2ae3c8fe.chunk.js",
+    "static/js/2.2ae3c8fe.chunk.js.map": "/static/js/2.2ae3c8fe.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f2a3fbe221021773cf80490ea1a61767.js": "/precache-manifest.f2a3fbe221021773cf80490ea1a61767.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.28e6ab26.chunk.css.map": "/static/css/main.28e6ab26.chunk.css.map",
+    "static/media/style.sass": "/viewer/static/media/prev_btn_over.3e9b40a8.svg",
+    "static/media/intensity_legend.svg": "/viewer/static/media/intensity_legend.91d6f78c.svg"
   }
 }
