@@ -4,6 +4,23 @@
 // This declaration is too ambiguous, but is the only way to target this label given 
 // the current DOM structure. Remove when marginalia functionality complete.
 
+#sga
+  text-align: center
+
+  img 
+    width: auto !important  
+
+  > div
+    font-style: italic
+    font-size: smaller
+  
+  a:visited, a:hover, a:active
+    color: #000
+  
+  > hr
+    width: 50%
+    margin: 1em auto 0 auto !important
+
 #viewer .viewer__cols > .center-label:first-child
   visibility: hidden
 

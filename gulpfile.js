@@ -354,7 +354,6 @@ var extractViewerScripts = function (done) {
 			pattern_start: "<body>",
 			pattern_end: "</body>"
 		}))
-		.pipe(replace(/\/static\/js/g, '/viewer/viewer/static/js'))
 		.pipe(dest(paths.viewerapp.scriptdest));
 }
 
