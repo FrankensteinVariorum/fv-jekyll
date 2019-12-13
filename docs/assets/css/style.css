@@ -650,6 +650,16 @@ ul.links a:hover { color: #D95369; }
 /* !UI STANDARDIZATION */
 /* !IMAGE PATHS */
 /* Ratios from Modular Scale for reference. Use selected value as scale above. */
+#sga { text-align: center; }
+
+#sga img { width: auto !important; }
+
+#sga > div { font-style: italic; font-size: smaller; }
+
+#sga a:visited, #sga a:hover, #sga a:active { color: #000; }
+
+#sga > hr { width: 50%; margin: 1em auto 0 auto !important; }
+
 #viewer .viewer__cols > .center-label:first-child { visibility: hidden; }
 
 #viewer > * { margin-bottom: 1.5rem; }
