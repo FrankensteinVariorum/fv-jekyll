@@ -1,6 +1,6 @@
 **THIS SITE IS NOT A CONVENTIONAL GITHUB-PAGES / JEKYLL SITE - PLEASE READ BELOW BEFORE EDITING**
 
-This site requires a Gulp-based build step prior to running the Jekyll build. This means that GitHub is not able to build the site for us from source automatically. Instead, one needs to run the build process (it requires nodejs and gulp) on your own machine. This will update the rendered HTML in the /docs folder, and then GitHub serves that HTML. Therefore, you must commit both the changes to the markdown source as well as the changes to the built HTML and push those to GitHub. 
+This site requires a Gulp-based build step prior to running the Jekyll build. This means that GitHub is not able to build the site for us from source automatically. Instead, one needs to run the build process (it requires nodejs and gulp) on your own machine. This will update the rendered HTML in the /docs folder, and then GitHub serves that HTML. Therefore, you must commit both the changes to the markdown source as well as the changes to the built HTML and push those to GitHub.
 
 **Do not edit the /docs files by hand – they are wiped and regenerated every time the gulp/Jekyll build processes the source markdown.**
 
@@ -28,13 +28,13 @@ Once dependencies are downloaded, the build is managed via gulp.
 
 + `gulp build` – Full deployment. Runs SASS files, js minimizer, copies images, processes the React component, builds Jekyll (via bundle exec) and outputs the static to the `docs/` folder, which will be served by GitHub pages. **Afer running `gulp build`, you must commit all changed files from the `docs/` folder and then push those commits to GitHub.**
 
-+ `gulp buildLocal` – As above, but outputs to the `_site/` folder instead. Good for testing everything but output destination.
++ `gulp buildLocal` – As above, but outputs to the `_site/` folder instead, which is untracked by git. Good for testing everything but output destination.
 
 + `gulp watch` – Looks for any changes to the Sass or JS files and builds automatically.
 
 + `gulp watchLocal` – As above, but builds to local `_site/` folder.
 
-+ To preview the Jekyll site after building, run `bundle exec jekyll serve --watch --config _config.yml,_local_config.yml`
++ To preview the Jekyll site after building, run `bundle exec jekyll serve --watch --config _config.yml,_local_config.yml` and then visit the site in your browser at <http://localhost:4000/viewer/>
 
 + All supporting assets should be placed in the `_source/` folder. They will be output to `assets/` on build.
 
@@ -46,13 +46,15 @@ Once dependencies are downloaded, the build is managed via gulp.
 
 ## URL configuration
 
-The _config.yml file currently sets the base url of the site as `/fv-jekyll`, which corresponds to the path offered by GitHub pages.
+The _config.yml file currently sets the base url of the site as `/viewer`, which corresponds to the path offered by GitHub pages.
 
 To redeploy this site with a different base url, you must edit that attribute in configuration and do a full rebuild, as it affects not only the HTML components but also paths referenced by SCSS and JS files.
 
 ## Changing site content & static (non-React) assets
 
 + Please refer to Jekyll documentation for basic usage and structure.
+
++ To revise the React app, copy the built application into `_source/viewer/build`, and then run `gulp buildLocal`. This copies the application into the `viewer` directory (which is untracked by git) and moves static assets to the appropriate locations before running the Jekyll build process.
 
 + Run gulp build to build the site after changes (see Basic Commands below)
 

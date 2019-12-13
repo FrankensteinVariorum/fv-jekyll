@@ -1,4 +1,3 @@
 # Local configuration that builds to _site without any additional baseurl
 
-baseurl: ""
 destination: _site
