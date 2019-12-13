@@ -15,14 +15,14 @@ Our work continues, with those focused on specific portions of the effort listed
 
 - Elisa Beshero-Bondar (Pitt-Greensburg)
 - Rikk Mulligan (Carnegie Mellon)
-- Raffaele Viglianti (MITH, Univ Maryland)
+- Raffaele Viglianti (MITH, University of Maryland)
 
 #### Variorum / Project Interface
 
 - Elisa Beshero-Bondar (Pitt-Greensburg)
 - Matt Lincoln (Carnegie Mellon)
 - Rikk Mulligan (Carnegie Mellon)
-- Raffaele Viglianti (MITH, Univ Maryland)
+- Raffaele Viglianti (MITH, University of Maryland)
 - Scott B. Weingart (Carnegie Mellon)
 - Agile Humanities Agency
 
