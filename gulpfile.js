@@ -333,6 +333,10 @@ var copyViewerComponent = function (done) {
 		paths.viewerapp.mediaout
 	], { force: true });
 
+	del.sync([
+		paths.viewerapp.output
+	], { force: true });
+
 	var mediacopy = src(paths.viewerapp.mediain)
 		.pipe(dest(paths.viewerapp.mediaout));
 
