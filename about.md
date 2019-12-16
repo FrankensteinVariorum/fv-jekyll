@@ -24,3 +24,14 @@ The following are distinct editions prepared “under the hood” by correcting 
 3. [1823 publication of Frankenstein](https://frankensteinvariorum.github.io/fv-collation/Frankenstein_1823.html) (supervised by William Godwin).
 
 4. [1831 publication of Frankenstein](https://frankensteinvariorum.github.io/fv-collation/Frankenstein_1831.html).
+
+
+## View all public annotations:
+
+While our prototype viewer currently displays only the text and annotations for as far as the current progress of the collation, our annotations team has produced scholarly annotations for additional sections of each edition. To view these annotations on the beta editions, use the links below:
+
+1. [1818 publication of Frankenstein](https://via.hypothes.is/https://frankensteinvariorum.github.io/fv-collation/Frankenstein_1818.html).
+2. [The Thomas copy](https://via.hypothes.is/https://frankensteinvariorum.github.io/fv-collation/Frankenstein_Thom.html)
+3. [1823 publication of Frankenstein](https://via.hypothes.is/https://frankensteinvariorum.github.io/fv-collation/Frankenstein_1823.html)
+4. [1831 publication of Frankenstein](https://via.hypothes.is/https://frankensteinvariorum.github.io/fv-collation/Frankenstein_1831.html).
+5.
