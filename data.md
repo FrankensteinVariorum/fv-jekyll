@@ -12,3 +12,5 @@ As of January 2020, this collection includes two deposits:
 
 1. Collated TEI: Elisa Beshero-Bondar, Raffaele Viglianti, and Rikk Mulligan. “Frankenstein Variorum - Collations”, January 8, 2020. <https://doi.org/10.1184/R1/11538798>.
 2. Annotations data: Jon Klancher, John Quirk, Steven Gotzler, Avery Wiscomb, Elisa Beshero-Bondar, Raffaele Viglianti, Rikk Mulligan, Matthew Lincoln, and Scott Weingart. “Frankenstein Variorum - Annotations”. January 6, 2020. <https://doi.org/10.1184/R1/11440689>.
+
+See the deposit pages for more detailed descriptions and technical documentation.
